@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Stackly</title>
+  <meta
+    name="description"
+    content="Get in touch with Stackly. Book an appointment, contact our departments, find our location, and get answers to common questions."
+  >
+
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/contact.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <img src="../logo_trimmed.webp" alt="StacklyCare Logo" class="loader-logo">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('pageLoader');
+        if (loader) loader.classList.add('hidden');
+      }, 800);
+    });
+  </script>
+
+  <!-- ================================================================
+       HEADER
+       ================================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="../index.html" class="site-logo" aria-label="Stackly Home">
+          <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="services.html" class="nav-item">Services</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="blog.html" class="nav-item">Blog</a>
+          <a href="contact.html" class="nav-item active">Contact</a>
+        </nav>
+
+        <a href="login.html" class="btn-outline-pill-header">
+          <span>Book a Schedule</span>
+
+          <span class="circle-arrow">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-navigation">
+      <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html" class="mobile-nav-cta">Book a Schedule</a>
+    </div>
+
+
+  <main>
+
+    <!-- ================================================================
+         01. HERO — SPLIT SCREEN REVEAL
+         ================================================================ -->
+    <section class="contact-hero">
+      <div class="contact-hero-noise"></div>
+
+      <div class="container">
+        <div class="contact-hero-grid">
+
+          <div class="contact-hero-content">
+
+            <div class="contact-eyebrow hero-reveal">
+              <span class="eyebrow-dot"></span>
+              We're here for you
+            </div>
+
+            <h1 class="contact-hero-title hero-reveal">
+              Let's make your
+              <span>health</span>
+              a priority.
+            </h1>
+
+            <p class="contact-hero-description hero-reveal">
+              Whether you are ready to book an appointment, have a question,
+              or simply want to know more about our care, our team is here
+              to help.
+            </p>
+
+            <div class="contact-hero-actions hero-reveal">
+              <a href="../404.html" class="btn btn-primary">
+                <span>Book an Appointment</span>
+
+                <span class="btn-icon-circle">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="../404.html" class="btn btn-outline">
+                Contact Our Team
+              </a>
+            </div>
+
+            <div class="contact-hero-note hero-reveal">
+              <span class="status-indicator"></span>
+              Usually responds within one business day
+            </div>
+
+          </div>
+
+          <div class="contact-hero-visual hero-reveal">
+
+            <div class="hero-image-frame">
+              <img
+                src="../assets/1551076805-e1869033e561.webp"
+                alt="Healthcare professional speaking with a patient"
+              >
+
+              <div class="hero-image-overlay"></div>
+
+              <div class="hero-image-label">
+                <span>Patient-first care</span>
+                <strong>Every conversation matters.</strong>
+              </div>
+            </div>
+
+            <div class="hero-floating-card hero-card-one">
+              <div class="floating-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+
+              <div>
+                <strong>24/7 Support</strong>
+                <span>We're always listening</span>
+              </div>
+            </div>
+
+            <div class="hero-floating-card hero-card-two">
+              <span class="mini-check"><i class="fa-solid fa-check"></i></span>
+              <span>Trusted healthcare team</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         02. CONTACT DETAILS — FLOATING CARDS
+         ================================================================ -->
+    <section class="contact-details-section" id="contact-details">
+      <div class="container">
+
+        <div class="section-heading contact-details-heading reveal-up">
+          <div class="section-kicker">
+            <span></span>
+            Contact information
+          </div>
+
+          <h2>
+            Reach us without
+            <em>the hassle.</em>
+          </h2>
+
+          <p>
+            Choose the way that works best for you. Our team is ready to
+            help with appointments, questions, and general support.
+          </p>
+        </div>
+
+        <div class="contact-details-grid">
+
+          <a href="../404.html" class="contact-detail-card">
+            <div class="detail-card-top">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                  19.79 19.79 0 0 1-8.63-3.07
+                  19.5 19.5 0 0 1-6-6
+                  19.79 19.79 0 0 1-3.07-8.67
+                  A2 2 0 0 1 4.11 2h3
+                  a2 2 0 0 1 2 1.72
+                  12.84 12.84 0 0 0 .7 2.81
+                  2 2 0 0 1-.45 2.11L8.09 9.91
+                  a16 16 0 0 0 6 6l1.27-1.27
+                  a2 2 0 0 1 2.11-.45
+                  12.84 12.84 0 0 0 2.81.7
+                  A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+
+              <span class="detail-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+
+            <span class="detail-label">Call us</span>
+            <strong>+1 (800) 555-0199</strong>
+            <p>Mon–Sat · 8:00 AM–8:00 PM</p>
+          </a>
+
+
+          <a href="../404.html" class="contact-detail-card">
+            <div class="detail-card-top">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <polyline points="3 7 12 13 21 7"/>
+                </svg>
+              </div>
+
+              <span class="detail-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+
+            <span class="detail-label">Email us</span>
+            <strong>care@Stackly.com</strong>
+            <p>Questions, support & appointments</p>
+          </a>
+
+
+          <a href="../404.html" class="contact-detail-card">
+            <div class="detail-card-top">
+              <div class="detail-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+              </div>
+
+              <span class="detail-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+
+            <span class="detail-label">Visit us</span>
+            <strong>Stackly Center</strong>
+            <p>120 Wellness Avenue, Suite 200</p>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         03. APPOINTMENT — PROGRESSIVE DISCLOSURE
+         ================================================================ -->
+    <section class="appointment-section" id="appointment">
+      <div class="container">
+
+        <div class="appointment-shell">
+
+          <div class="appointment-intro reveal-up">
+            <div class="section-kicker light">
+              <span></span>
+              Appointment
+            </div>
+
+            <h2>
+              Your next step
+              <em>starts here.</em>
+            </h2>
+
+            <p>
+              Tell us a little about what you need. We'll guide you to
+              the right care without making the process complicated.
+            </p>
+
+            <div class="appointment-progress">
+              <div class="progress-step active">
+                <span>01</span>
+                <small>Your details</small>
+              </div>
+
+              <div class="progress-line"></div>
+
+              <div class="progress-step">
+                <span>02</span>
+                <small>Department</small>
+              </div>
+
+              <div class="progress-line"></div>
+
+              <div class="progress-step">
+                <span>03</span>
+                <small>Preferred time</small>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="appointment-form-wrap">
+
+            <form id="appointmentForm" class="appointment-form" novalidate>
+
+              <div class="form-step active" data-step="1">
+
+                <div class="form-header">
+                  <span>Step 01</span>
+                  <h3>Tell us about yourself</h3>
+                </div>
+
+                <div class="form-grid">
+
+                  <label class="form-field">
+                    <span>Full name</span>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      required
+                    >
+                  </label>
+
+                  <label class="form-field">
+                    <span>Email address</span>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="you@example.com"
+                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                      title="Please enter a valid email address"
+                      required
+                    >
+                  </label>
+
+                  <label class="form-field">
+                    <span>Phone number</span>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="+1 (000) 000-0000"
+                      required
+                    >
+                  </label>
+
+                  <label class="form-field">
+                    <span>How can we help?</span>
+                    <select name="reason" required>
+                      <option value="">Select an option</option>
+                      <option value="appointment">Book an appointment</option>
+                      <option value="question">General question</option>
+                      <option value="followup">Existing patient follow-up</option>
+                    </select>
+                  </label>
+
+                </div>
+
+                <button type="button" class="form-next btn btn-primary">
+                  Continue
+                  <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                </button>
+
+              </div>
+
+
+              <div class="form-step" data-step="2">
+
+                <div class="form-header">
+                  <span>Step 02</span>
+                  <h3>Choose a department</h3>
+                </div>
+
+                <div class="department-options">
+
+                  <label class="department-option">
+                    <input type="radio" name="department" value="womens-health" required>
+                    <span class="department-option-inner">
+                      <strong>Women's Health</strong>
+                      <small>Comprehensive women's care</small>
+                    </span>
+                  </label>
+
+                  <label class="department-option">
+                    <input type="radio" name="department" value="wellness">
+                    <span class="department-option-inner">
+                      <strong>Wellness & Prevention</strong>
+                      <small>Preventive and lifestyle care</small>
+                    </span>
+                  </label>
+
+                  <label class="department-option">
+                    <input type="radio" name="department" value="specialist">
+                    <span class="department-option-inner">
+                      <strong>Specialist Care</strong>
+                      <small>Connect with our specialists</small>
+                    </span>
+                  </label>
+
+                  <label class="department-option">
+                    <input type="radio" name="department" value="general">
+                    <span class="department-option-inner">
+                      <strong>General Consultation</strong>
+                      <small>Start with a general consultation</small>
+                    </span>
+                  </label>
+
+                </div>
+
+                <div class="form-navigation">
+                  <button type="button" class="form-back">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                  </button>
+
+                  <button type="button" class="form-next btn btn-primary">
+                    Continue
+                    <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                  </button>
+                </div>
+
+              </div>
+
+
+              <div class="form-step" data-step="3">
+
+                <div class="form-header">
+                  <span>Step 03</span>
+                  <h3>Preferred appointment time</h3>
+                </div>
+
+                <div class="form-grid">
+
+                  <label class="form-field">
+                    <span>Preferred date</span>
+                    <input type="date" name="date" required>
+                  </label>
+
+                  <label class="form-field">
+                    <span>Preferred time</span>
+                    <select name="time" required>
+                      <option value="">Select a time</option>
+                      <option>Morning</option>
+                      <option>Afternoon</option>
+                      <option>Evening</option>
+                    </select>
+                  </label>
+
+                </div>
+
+                <label class="form-field full-field">
+                  <span>Anything else you'd like us to know?</span>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="Your message..."
+                    required
+                  ></textarea>
+                </label>
+
+                <div class="form-navigation">
+                  <button type="button" class="form-back">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                  </button>
+
+                  <button type="button" class="btn btn-primary" id="requestApptBtn">
+                    Request Appointment
+                    <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                  </button>
+                </div>
+
+              </div>
+
+
+              <div class="form-success">
+                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+
+                <span>Request received</span>
+
+                <h3>We'll be in touch soon.</h3>
+
+                <p>
+                  Thank you for choosing Stackly. Our team will review
+                  your request and contact you to confirm your appointment.
+                </p>
+
+                <button type="button" class="success-reset">
+                  Make another request
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         04. DEPARTMENTS — INTERACTIVE TABS
+         ================================================================ -->
+    <section class="departments-section">
+      <div class="container">
+
+        <div class="departments-heading reveal-up">
+          <div>
+            <div class="section-kicker">
+              <span></span>
+              Find your care
+            </div>
+
+            <h2>
+              One center.
+              <em>Many ways to help.</em>
+            </h2>
+          </div>
+
+          <p>
+            Explore our departments and find the team best suited to
+            support your health journey.
+          </p>
+        </div>
+
+
+        <div class="department-tabs-shell reveal-up">
+
+          <div class="department-tab-list" role="tablist">
+
+            <button
+              class="department-tab active"
+              role="tab"
+              data-department="womens"
+            >
+              <span>01</span>
+              Women's Health
+              <b><i class="fa-solid fa-arrow-right"></i></b>
+            </button>
+
+            <button
+              class="department-tab"
+              role="tab"
+              data-department="wellness"
+            >
+              <span>02</span>
+              Wellness & Prevention
+              <b><i class="fa-solid fa-arrow-right"></i></b>
+            </button>
+
+            <button
+              class="department-tab"
+              role="tab"
+              data-department="specialist"
+            >
+              <span>03</span>
+              Specialist Care
+              <b><i class="fa-solid fa-arrow-right"></i></b>
+            </button>
+
+            <button
+              class="department-tab"
+              role="tab"
+              data-department="support"
+            >
+              <span>04</span>
+              Patient Support
+              <b><i class="fa-solid fa-arrow-right"></i></b>
+            </button>
+
+          </div>
+
+
+          <div class="department-tab-content">
+
+            <div class="department-panel active" data-panel="womens">
+
+              <div class="department-panel-image">
+                <img
+                  src="../assets/1594824476967-48c8b964273f.webp"
+                  alt="Female healthcare professional"
+                >
+              </div>
+
+              <div class="department-panel-copy">
+                <span class="panel-number">01 / 04</span>
+
+                <h3>
+                  Women's health,
+                  <em>thoughtfully delivered.</em>
+                </h3>
+
+                <p>
+                  From routine wellness to more complex needs, our
+                  women's health team provides personalized care in a
+                  comfortable environment.
+                </p>
+
+                <a href="../404.html" class="text-link">
+                  Explore women's health services
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+              </div>
+
+            </div>
+
+
+            <div class="department-panel" data-panel="wellness">
+
+              <div class="department-panel-image">
+                <img
+                  src="../assets/1559839734-2b71ea197ec2.webp"
+                  alt="Wellness consultation"
+                >
+              </div>
+
+              <div class="department-panel-copy">
+                <span class="panel-number">02 / 04</span>
+
+                <h3>
+                  Prevention is
+                  <em>power.</em>
+                </h3>
+
+                <p>
+                  Build a healthier future through proactive screening,
+                  lifestyle guidance, wellness consultations and
+                  personalized prevention plans.
+                </p>
+
+                <a href="../404.html" class="text-link">
+                  Explore wellness services
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+              </div>
+
+            </div>
+
+
+            <div class="department-panel" data-panel="specialist">
+
+              <div class="department-panel-image">
+                <img
+                  src="../assets/1551836022-d5d88e9218df.webp"
+                  alt="Medical specialist consultation"
+                >
+              </div>
+
+              <div class="department-panel-copy">
+                <span class="panel-number">03 / 04</span>
+
+                <h3>
+                  Expertise when
+                  <em>you need it.</em>
+                </h3>
+
+                <p>
+                  Access experienced specialists who work collaboratively
+                  to provide thoughtful diagnosis, treatment and follow-up.
+                </p>
+
+                <a href="../404.html" class="text-link">
+                  Meet our specialists
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+              </div>
+
+            </div>
+
+
+            <div class="department-panel" data-panel="support">
+
+              <div class="department-panel-image">
+                <img
+                  src="../assets/1622253692010-333f2da6031d.webp"
+                  alt="Healthcare support team"
+                >
+              </div>
+
+              <div class="department-panel-copy">
+                <span class="panel-number">04 / 04</span>
+
+                <h3>
+                  Care continues
+                  <em>beyond the visit.</em>
+                </h3>
+
+                <p>
+                  Our patient support team helps coordinate appointments,
+                  follow-ups, questions and the practical details of your
+                  care.
+                </p>
+
+                <a href="../404.html" class="text-link">
+                  Talk to our support team
+                  <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         05. LOCATION — INTERACTIVE MAP
+         ================================================================ -->
+    <section class="location-section" id="location">
+
+      <div class="location-map" style="padding: 0;">
+        <iframe 
+          width="100%" 
+          height="100%" 
+          frameborder="0" 
+          scrolling="no" 
+          marginheight="0" 
+          marginwidth="0" 
+          src="https://maps.google.com/maps?q=Stackly%20office%20salem%20tn%20india&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+          style="border: 0; width: 100%; height: 100%; border-radius: inherit;">
+        </iframe>
+      </div>
+
+
+      <div class="location-content">
+
+        <div class="section-kicker">
+          <span></span>
+          Find us
+        </div>
+
+        <h2>
+          Come visit
+          <em>our center.</em>
+        </h2>
+
+        <p>
+          Our center is designed to make every visit feel calm,
+          welcoming and comfortable from the moment you arrive.
+        </p>
+
+        <div class="address-block">
+          <div class="address-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </div>
+
+          <div>
+            <strong>Stackly Center</strong>
+            <span>120 Wellness Avenue</span>
+            <span>Suite 200, Downtown</span>
+          </div>
+        </div>
+
+        <div class="location-actions">
+          <a href="../404.html" class="btn btn-primary">
+            Get Directions
+            <span class="btn-icon-circle"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="location-phone">
+            <span>Call the center</span>
+            +1 (800) 555-0199
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================
+         06. OPENING HOURS — EXPANDABLE SCHEDULE
+         ================================================================ -->
+    <section class="hours-section">
+      <div class="container">
+
+        <div class="hours-layout">
+
+          <div class="hours-intro reveal-up">
+            <div class="section-kicker">
+              <span></span>
+              Opening hours
+            </div>
+
+            <h2>
+              Find a time
+              <em>that works.</em>
+            </h2>
+
+            <p>
+              Our regular hours are designed around your schedule.
+              Select a day to see the full availability.
+            </p>
+
+            <div class="hours-status">
+              <span></span>
+              Currently accepting appointments
+            </div>
+          </div>
+
+
+          <div class="hours-accordion reveal-up">
+
+            <div class="hours-row active">
+              <button type="button" class="hours-question">
+                <span>Monday</span>
+                <strong>8:00 AM — 8:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  General consultations, women's health, wellness and
+                  specialist appointments available.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row">
+              <button type="button" class="hours-question">
+                <span>Tuesday</span>
+                <strong>8:00 AM — 8:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  Full clinic services available throughout the day.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row">
+              <button type="button" class="hours-question">
+                <span>Wednesday</span>
+                <strong>8:00 AM — 8:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  Full clinic services available throughout the day.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row">
+              <button type="button" class="hours-question">
+                <span>Thursday</span>
+                <strong>8:00 AM — 8:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  Full clinic services available throughout the day.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row">
+              <button type="button" class="hours-question">
+                <span>Friday</span>
+                <strong>8:00 AM — 7:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  Appointments and follow-up consultations available.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row">
+              <button type="button" class="hours-question">
+                <span>Saturday</span>
+                <strong>9:00 AM — 4:00 PM</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  Limited appointments. Advance booking recommended.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="hours-row closed">
+              <button type="button" class="hours-question">
+                <span>Sunday</span>
+                <strong>Closed</strong>
+                <i>+</i>
+              </button>
+
+              <div class="hours-answer">
+                <p>
+                  The center is closed on Sundays. Online appointment
+                  requests remain available.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         07. FAQ — ACCORDION SHOWCASE
+         ================================================================ -->
+    <section class="faq-section">
+      <div class="container">
+
+        <div class="faq-heading reveal-up">
+
+          <div class="section-kicker">
+            <span></span>
+            Frequently asked
+          </div>
+
+          <h2>
+            Questions,
+            <em>answered.</em>
+          </h2>
+
+          <p>
+            Can't find what you're looking for?
+            <a href="../404.html">Send us a message.</a>
+          </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <div class="faq-item active">
+            <button type="button" class="faq-question">
+              <span>How do I book an appointment?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                You can request an appointment through the form above,
+                call our center directly, or email our support team.
+                Once we receive your request, we'll contact you to
+                confirm the appointment details.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Do I need a referral to see a specialist?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Referral requirements can vary depending on the
+                specialist and your insurance plan. Contact our
+                support team and we'll help you understand the process.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Can I change or cancel my appointment?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Yes. Please Contact as early as possible if you need
+                to change or cancel your appointment so we can help
+                find another suitable time.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>What should I bring to my first visit?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Bring a valid ID, relevant medical records, medication
+                information and insurance details if applicable.
+                Your care team will let you know if anything else is
+                required.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How can I contact the center outside regular hours?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                You can submit an online appointment request or send
+                us an email at any time. For urgent or emergency
+                situations, please use your local emergency services.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         08. CTA — PARALLAX IMAGE
+         ================================================================ -->
+    <section class="contact-final-cta">
+
+      <div class="cta-background">
+        <img
+          src="../assets/1579684385127-1ef15d508118.webp"
+          alt=""
+          aria-hidden="true"
+        >
+      </div>
+
+      <div class="cta-overlay"></div>
+
+      <div class="container">
+        <div class="final-cta-content reveal-up">
+
+          <div class="section-kicker light">
+            <span></span>
+            Your care starts here
+          </div>
+
+          <h2>
+            You don't have to
+            <em>figure it out alone.</em>
+          </h2>
+
+          <p>
+            Talk to our team and take the next step toward care that
+            feels personal, thoughtful and right for you.
+          </p>
+
+          <div class="final-cta-actions">
+            <a href="../404.html" class="btn btn-primary">
+              Book an Appointment
+              <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <a href="../404.html" class="cta-call">
+              <span>Prefer to talk?</span>
+              Call +1 (800) 555-0199
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Column 1: Brand & Socials -->
+        <div class="footer-col footer-brand-col">
+          <a href="../index.html" class="site-logo footer-logo">
+            <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+          </a>
+
+          <p class="footer-brand-desc">
+            The modern healthcare platform for women ready to experience compassionate care and live healthier, happier lives.
+          </p>
+
+          <div class="footer-socials">
+            <a href="../404.html" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.74l-.44 3h-2.3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../404.html">Our Story</a></li>
+            <li><a href="../404.html">Careers</a></li>
+            <li><a href="../404.html">Press</a></li>
+            <li><a href="../404.html">Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Sales -->
+        <div class="footer-col footer-contact-col">
+          <h4>Contact Sales</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="../404.html">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="../404.html">sales@Stackly.com</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a href="../404.html">Salem, Tamil Nadu</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../404.html">Privacy</a>
+          <a href="../404.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================================
+       JAVASCRIPT
+       ================================================================ -->
+  <script>
+
+    // ================================================================
+    // GSAP SETUP
+    // ================================================================
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ==============================================================
+      // HERO
+      // ==============================================================
+
+      const heroTimeline = gsap.timeline({
+        defaults: {
+          ease: 'power3.out'
+        }
+      });
+
+      heroTimeline
+        .from('.site-header', {
+          y: -35,
+          opacity: 0,
+          duration: 0.7
+        })
+        .from('.contact-hero .hero-reveal', {
+          y: 35,
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.1
+        }, '-=0.3')
+        .from('.hero-image-frame', {
+          clipPath: 'inset(0 0 100% 0 round 32px)',
+          duration: 1.2,
+          ease: 'power4.inOut'
+        }, '-=0.8')
+        .from('.hero-card-one', {
+          x: -30,
+          opacity: 0,
+          duration: 0.7
+        }, '-=0.5')
+        .from('.hero-card-two', {
+          x: 30,
+          opacity: 0,
+          duration: 0.7
+        }, '-=0.55');
+
+
+      // ==============================================================
+      // HERO IMAGE PARALLAX
+      // ==============================================================
+
+      gsap.to('.hero-image-frame img', {
+        yPercent: 8,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.contact-hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+
+
+      // ==============================================================
+      // GENERIC REVEALS
+      // ==============================================================
+
+      gsap.utils.toArray('.reveal-up').forEach((element) => {
+
+        gsap.from(element, {
+          y: 55,
+          opacity: 0,
+          duration: 0.9,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 82%',
+            once: true
+          }
+        });
+
+      });
+
+
+      // ==============================================================
+      // DEPARTMENT TABS
+      // ==============================================================
+
+      const departmentTabs =
+        document.querySelectorAll('.department-tab');
+
+      const departmentPanels =
+        document.querySelectorAll('.department-panel');
+
+      departmentTabs.forEach((tab) => {
+
+        tab.addEventListener('click', () => {
+
+          const target = tab.dataset.department;
+
+          departmentTabs.forEach((item) => {
+            item.classList.remove('active');
+          });
+
+          departmentPanels.forEach((panel) => {
+            panel.classList.remove('active');
+          });
+
+          tab.classList.add('active');
+
+          const targetPanel =
+            document.querySelector(`[data-panel="${target}"]`);
+
+          if (!targetPanel) return;
+
+          targetPanel.classList.add('active');
+
+          gsap.fromTo(
+            targetPanel.querySelector('.department-panel-image'),
+            {
+              clipPath: 'inset(0 100% 0 0)'
+            },
+            {
+              clipPath: 'inset(0 0% 0 0)',
+              duration: 0.7,
+              ease: 'power3.inOut'
+            }
+          );
+
+          gsap.fromTo(
+            targetPanel.querySelectorAll('.department-panel-copy > *'),
+            {
+              y: 20,
+              opacity: 0
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.55,
+              stagger: 0.07,
+              ease: 'power3.out'
+            }
+          );
+
+        });
+
+      });
+
+
+      // ==============================================================
+      // HOURS ACCORDION
+      // ==============================================================
+
+      const hoursRows =
+        document.querySelectorAll('.hours-row');
+
+      hoursRows.forEach((row) => {
+
+        const button = row.querySelector('.hours-question');
+        const answer = row.querySelector('.hours-answer');
+
+        button.addEventListener('click', () => {
+
+          const isActive = row.classList.contains('active');
+
+          hoursRows.forEach((item) => {
+
+            item.classList.remove('active');
+
+            const itemAnswer =
+              item.querySelector('.hours-answer');
+
+            gsap.to(itemAnswer, {
+              height: 0,
+              opacity: 0,
+              duration: 0.35,
+              ease: 'power2.out'
+            });
+
+          });
+
+          if (!isActive) {
+
+            row.classList.add('active');
+
+            gsap.to(answer, {
+              height: 'auto',
+              opacity: 1,
+              duration: 0.45,
+              ease: 'power3.out'
+            });
+
+          }
+
+        });
+
+      });
+
+
+      // ==============================================================
+      // FAQ ACCORDION
+      // ==============================================================
+
+      const faqItems =
+        document.querySelectorAll('.faq-item');
+
+      faqItems.forEach((item) => {
+
+        const button = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (item.classList.contains('active')) {
+          gsap.set(answer, {
+            height: 'auto',
+            opacity: 1
+          });
+        }
+
+        button.addEventListener('click', () => {
+
+          const isActive =
+            item.classList.contains('active');
+
+          faqItems.forEach((faq) => {
+
+            faq.classList.remove('active');
+
+            gsap.to(
+              faq.querySelector('.faq-answer'),
+              {
+                height: 0,
+                opacity: 0,
+                duration: 0.35,
+                ease: 'power2.out'
+              }
+            );
+
+          });
+
+          if (!isActive) {
+
+            item.classList.add('active');
+
+            gsap.to(answer, {
+              height: 'auto',
+              opacity: 1,
+              duration: 0.45,
+              ease: 'power3.out'
+            });
+
+          }
+
+        });
+
+      });
+
+
+      // ==============================================================
+      // APPOINTMENT MULTI-STEP FORM
+      // ==============================================================
+
+      const form =
+        document.getElementById('appointmentForm');
+
+      const formSteps =
+        document.querySelectorAll('.form-step');
+
+      const progressSteps =
+        document.querySelectorAll('.progress-step');
+
+      const progressLines =
+        document.querySelectorAll('.progress-line');
+
+      let currentStep = 1;
+
+      // Reset form on initial load or back navigation
+      window.addEventListener('pageshow', (event) => {
+        if (form) {
+          form.reset();
+          currentStep = 1;
+          showStep(1);
+          form.querySelectorAll('.error-message').forEach(el => el.remove());
+          form.querySelectorAll('.error-input').forEach(el => el.classList.remove('error-input'));
+        }
+      });
+
+
+      function showStep(step) {
+
+        formSteps.forEach((item) => {
+          item.classList.remove('active');
+        });
+
+        const targetStep =
+          document.querySelector(
+            `.form-step[data-step="${step}"]`
+          );
+
+        if (!targetStep) return;
+
+        targetStep.classList.add('active');
+
+        progressSteps.forEach((item, index) => {
+
+          item.classList.toggle(
+            'active',
+            index < step
+          );
+
+        });
+
+        progressLines.forEach((line, index) => {
+
+          line.classList.toggle(
+            'active',
+            index < step - 1
+          );
+
+        });
+
+        gsap.fromTo(
+          targetStep,
+          {
+            x: 25,
+            opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power3.out'
+          }
+        );
+
+      }
+
+
+      function validateStep(stepDiv) {
+        const inputs = stepDiv.querySelectorAll('input, select, textarea');
+        let isValid = true;
+        
+        // Clear previous errors
+        stepDiv.querySelectorAll('.error-message').forEach(el => el.remove());
+        inputs.forEach(input => input.classList.remove('error-input'));
+        
+        for (let input of inputs) {
+          if (!input.checkValidity()) {
+            isValid = false;
+            input.classList.add('error-input');
+            
+            if (input.type === 'radio') {
+              const optionsDiv = input.closest('.department-options');
+              if (optionsDiv && !optionsDiv.parentElement.querySelector('.error-message')) {
+                const errorMsg = document.createElement('span');
+                errorMsg.className = 'error-message';
+                errorMsg.textContent = 'Please select a department';
+                errorMsg.style.textAlign = 'center';
+                errorMsg.style.marginTop = '15px';
+                optionsDiv.insertAdjacentElement('afterend', errorMsg);
+              }
+            } else {
+              const parentLabel = input.closest('label');
+              if (parentLabel && !parentLabel.querySelector('.error-message')) {
+                const errorMsg = document.createElement('span');
+                errorMsg.className = 'error-message';
+                errorMsg.style.color = 'red';
+                
+                if (input.validity.valueMissing) {
+                  errorMsg.textContent = 'This field is required';
+                } else if (input.type === 'email' && (input.validity.typeMismatch || input.validity.patternMismatch)) {
+                  errorMsg.textContent = 'Please enter a valid email address';
+                } else {
+                  errorMsg.textContent = 'Invalid format';
+                }
+                
+                parentLabel.appendChild(errorMsg);
+              }
+            }
+          }
+        }
+        return isValid;
+      }
+
+      document.querySelectorAll('.form-next').forEach((button) => {
+        button.addEventListener('click', () => {
+          const currentStepDiv = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+          if (!validateStep(currentStepDiv)) return;
+
+          if (currentStep >= 3) return;
+
+          currentStep++;
+          showStep(currentStep);
+        });
+      });
+
+      const requestApptBtn = document.getElementById('requestApptBtn');
+      if (requestApptBtn) {
+        requestApptBtn.addEventListener('click', () => {
+          const currentStepDiv = document.querySelector('.form-step[data-step="3"]');
+          if (!validateStep(currentStepDiv)) return;
+          
+          window.location.href = '../404.html';
+        });
+      }
+
+
+      document.querySelectorAll('.form-back').forEach((button) => {
+
+        button.addEventListener('click', () => {
+
+          if (currentStep <= 1) return;
+
+          currentStep--;
+          showStep(currentStep);
+
+        });
+
+      });
+
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        window.location.href = '../404.html';
+      });
+
+
+      document
+        .querySelector('.success-reset')
+        .addEventListener('click', () => {
+
+          form.reset();
+
+          document
+            .querySelector('.form-success')
+            .classList.remove('active');
+
+          currentStep = 1;
+
+          showStep(1);
+
+        });
+
+
+      // ==============================================================
+      // LOCATION MAP INTERACTION (Removed)
+      // ==============================================================
+
+
+      // ==============================================================
+      // CTA PARALLAX
+      // ==============================================================
+
+      gsap.to('.cta-background img', {
+        yPercent: 12,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.contact-final-cta',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+
+
+      // ==============================================================
+      // REDUCED MOTION
+      // ==============================================================
+
+      const reducedMotion =
+        window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+      if (reducedMotion) {
+
+        gsap.globalTimeline.clear();
+
+        ScrollTrigger.getAll().forEach((trigger) => {
+          trigger.kill();
+        });
+
+        document
+          .querySelectorAll('*')
+          .forEach((element) => {
+            element.style.transition = 'none';
+          });
+
+      }
+
+    });
+
+    /* =========================================================================
+       MOBILE MENU TOGGLE
+       ========================================================================= */
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNavigation = document.querySelector('.mobile-navigation');
+    if (menuToggle && mobileNavigation) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.classList.toggle('is-open');
+        mobileNavigation.classList.toggle('is-open');
+        document.body.classList.toggle('no-scroll', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+  </script>
+</body>
+</html>

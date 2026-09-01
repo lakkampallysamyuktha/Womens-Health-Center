@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="StacklyCare combines compassionate women's healthcare with modern medical expertise and personalized care.">
+  <title>StacklyCare — Your Health, Our Priority</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./global.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <img src="logo_trimmed.webp" alt="" class="loader-logo">
+    <div class="spinner"></div> 
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="site-logo" aria-label="Stackly Home">
+          <img src="logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html" class="nav-item active">Home</a>
+          <a href="html/services.html" class="nav-item">Services</a>
+          <a href="html/about.html" class="nav-item">About</a>
+          <a href="html/blog.html" class="nav-item">Blog</a>
+          <a href="html/contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <a href="html/login.html" class="btn-outline-pill-header">
+          <span>Book a Schedule</span>
+
+          <span class="circle-arrow">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-navigation">
+    <a href="index.html" class="active">Home</a>
+    <a href="html/services.html">Services</a>
+    <a href="html/about.html">About</a>
+    <a href="html/blog.html">Blog</a>
+    <a href="html/contact.html">Contact</a>
+    <a href="html/login.html" class="mobile-nav-cta">Book a Schedule</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <div class="badge-pill">
+                <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                <span>Smart Healthcare, Just for You</span>
+              </div>
+            </div>
+
+            <h1 class="hero-title">
+              Your Health,<br>
+              Our <span class="highlight-text">Priority</span>
+            </h1>
+
+            <p class="hero-description">
+              Advanced technology and compassionate care come together to deliver a healthier, happier you.
+            </p>
+
+            <div class="hero-actions">
+              <a href="404.html" class="btn btn-primary">
+                <span>Book a Schedule</span>
+                <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+              <a href="404.html" class="btn btn-outline">Explore Services</a>
+            </div>
+
+            <div class="hero-social-proof">
+              <div class="avatar-stack" aria-hidden="true">
+                <img
+                  src="assets/1534528741775-53994a69daeb.webp"
+                  alt="">
+                <img
+                  src="assets/1507003211169-0a1dd7228f2d.webp"
+                  alt="">
+                <img
+                  src="assets/1494790108377-be9c29b29330.webp"
+                  alt="">
+                <img
+                  src="assets/1500648767791-00dcc994a43e.webp"
+                  alt="">
+              </div>
+              <div class="proof-stats">
+                <span class="proof-number">4K+</span>
+                <span class="proof-label">Trusted by Thousands</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="doctor-backdrop">
+              <img class="doctor-image" src="assets/hero_doctor.webp" alt="Female doctor">
+            </div>
+
+            <div class="floating-features-card">
+              <div class="feature-pill-item">
+                <div class="feature-pill-icon"><i class="fa-solid fa-heart"></i></div>
+                <span>Expert<br>Doctors</span>
+              </div>
+              <div class="feature-pill-item">
+                <div class="feature-pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <span>Advanced<br>Technology</span>
+              </div>
+              <div class="feature-pill-item">
+                <div class="feature-pill-icon"><i class="fa-regular fa-clock"></i></div>
+                <span>24/7<br>Support</span>
+              </div>
+            </div>
+
+            <div class="doctor-mini-card">
+              <div class="doctor-mini-header">
+                <img class="doctor-mini-avatar" src="assets/hero_doctor.webp" alt="Dr. Nusrat Rahman">
+                <div>
+                  <div class="doctor-mini-name">Dr. Nusrat Rahman</div>
+                  <div class="doctor-mini-role">General Physician</div>
+                </div>
+              </div>
+              <div class="doctor-mini-rating">
+                <i class="fa-solid fa-star"></i> 4.9
+                <span>(120 Reviews)</span>
+              </div>
+              <a href="404.html" class="doctor-mini-btn">Book a Schedule</a>
+            </div>
+
+            <div class="companion-card">
+              <div class="companion-icon"><i class="fa-solid fa-plus"></i></div>
+              <div class="companion-text">
+                <h5>Your Health Companion</h5>
+                <p>Personalized care for every stage of your life.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust-section">
+      <div class="container">
+        <div class="section-intro trust-intro reveal-up">
+          <span class="section-eyebrow">WHY PATIENTS CHOOSE US</span>
+          <h2>Care built around <span>you.</span></h2>
+        </div>
+      </div>
+
+      <div class="trust-marquee-wrap" aria-label="StacklyCare benefits">
+        <div class="trust-track">
+          <div class="trust-item"><span class="trust-dot"></span>Experienced Specialists</div>
+          <div class="trust-item"><span class="trust-dot"></span>Personalized Treatment</div>
+          <div class="trust-item"><span class="trust-dot"></span>Patient-First Approach</div>
+          <div class="trust-item"><span class="trust-dot"></span>Modern Facilities</div>
+          <div class="trust-item"><span class="trust-dot"></span>Compassionate Care</div>
+          <div class="trust-item"><span class="trust-dot"></span>Advanced Technology</div>
+          <div class="trust-item"><span class="trust-dot"></span>Experienced Specialists</div>
+          <div class="trust-item"><span class="trust-dot"></span>Personalized Treatment</div>
+          <div class="trust-item"><span class="trust-dot"></span>Patient-First Approach</div>
+          <div class="trust-item"><span class="trust-dot"></span>Modern Facilities</div>
+          <div class="trust-item"><span class="trust-dot"></span>Compassionate Care</div>
+          <div class="trust-item"><span class="trust-dot"></span>Advanced Technology</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. WHY STACKLY -->
+    <section class="why-overview" id="why-stackly" aria-labelledby="why-stackly-title">
+      <div class="container">
+        <div class="section-heading reveal-up">
+          <span class="section-eyebrow">WHY STACKLY</span>
+
+          <h2 class="section-title" id="why-stackly-title">
+            Healthcare that puts <span>you first.</span>
+          </h2>
+
+          <p>
+            We combine modern medicine with genuine compassion — because great care
+            should feel personal, not procedural.
+          </p>
+        </div>
+
+        <!-- Animated metrics -->
+        <div class="why-stats" aria-label="StacklyCare key statistics">
+          <div class="why-stat">
+            <strong>
+              <span class="why-counter" data-value="12">0</span><em>+</em>
+            </strong>
+            <span>Years of experience</span>
+          </div>
+
+          <div class="why-stat">
+            <strong>
+              <span class="why-counter" data-value="4000" data-format="compact">0</span><em>+</em>
+            </strong>
+            <span>Women served</span>
+          </div>
+
+          <div class="why-stat">
+            <strong>
+              <span class="why-counter" data-value="98">0</span><em>%</em>
+            </strong>
+            <span>Patient satisfaction</span>
+          </div>
+
+          <div class="why-stat">
+            <strong>
+              <span class="why-counter" data-value="15">0</span><em>+</em>
+            </strong>
+            <span>Specialist doctors</span>
+          </div>
+        </div>
+
+        <div class="why-pillars">
+          <article class="why-pillar">
+            <div class="why-pillar-icon" aria-hidden="true">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3>Human-Centered Care</h3>
+            <p>
+              Every appointment begins with listening. We treat the person,
+              not just the condition.
+            </p>
+          </article>
+
+          <article class="why-pillar">
+            <div class="why-pillar-icon" aria-hidden="true">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <h3>Fast &amp; Accessible</h3>
+            <p>
+              Book appointments, access records and get care on a schedule
+              that works for you.
+            </p>
+          </article>
+
+          <article class="why-pillar">
+            <div class="why-pillar-icon" aria-hidden="true">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <h3>Expert Specialists</h3>
+            <p>
+              Experienced doctors bring deep expertise across every stage
+              of women's health.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+      <div class="container">
+        <div class="services-heading-row reveal-up">
+          <div>
+            <span class="section-eyebrow">WHAT WE CARE FOR</span>
+            <h2 class="section-title">Specialized care for <span>every chapter.</span></h2>
+          </div>
+          <p>From everyday wellness to specialized treatment, our services are designed around the unique needs of
+            women.</p>
+        </div>
+
+        <div class="services-art-grid">
+          <article class="service-art-card service-art-large">
+            <div class="service-art-image">
+              <img src="assets/1584515933487-779824d29309.webp"
+                alt="Woman receiving healthcare consultation">
+            </div>
+            <div class="service-art-content">
+              <span>01</span>
+              <h3>Women's Wellness</h3>
+              <p>Preventive care and personalized wellness plans built around you.</p>
+              <a href="./404.html">Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <article class="service-art-card service-art-tall">
+            <div class="service-art-image">
+              <img src="assets/1538108149393-fbbd81895907.webp"
+                alt="Medical specialist providing specialized care">
+            </div>
+            <div class="service-art-content">
+              <span>02</span>
+              <h3>Specialized Care</h3>
+              <p>Expert support for complex women's health needs.</p>
+              <a href="./404.html">Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <article class="service-art-card service-art-wide">
+            <div class="service-art-image">
+              <img src="assets/1579684385127-1ef15d508118.webp"
+                alt="Doctor reviewing medical information">
+            </div>
+            <div class="service-art-content">
+              <span>03</span>
+              <h3>Diagnostics &amp; Screening</h3>
+              <p>Clear answers through thoughtful diagnostics and modern screening.</p>
+              <a href="./404.html">Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+
+          <article class="service-art-card service-art-small">
+            <div class="service-art-image">
+              <img src="assets/1551601651-2a8555f1a136.webp"
+                alt="Healthcare professional">
+            </div>
+            <div class="service-art-content">
+              <span>04</span>
+              <h3>Long-Term Wellness</h3>
+              <p>Ongoing support for a healthier future.</p>
+              <a href="./404.html">Explore <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIALIZATIONS -->
+    <section class="specializations-section">
+      <div class="specializations-inner">
+        <div class="container">
+          <div class="specializations-heading">
+            <div>
+              <span class="section-eyebrow">SPECIALIZATIONS</span>
+              <h2>Expertise across <span>women's health.</span></h2>
+            </div>
+            <div class="horizontal-progress"><span class="progress-current">01</span><span
+                class="progress-line"></span><span>04</span></div>
+          </div>
+        </div>
+
+        <div class="specializations-track">
+          <article class="specialization-card">
+            <div class="specialization-number">01</div>
+            <div class="specialization-image"><img
+                src="assets/1576091160550-2173dba999ef.webp"
+                alt="Women's health consultation"></div>
+            <div class="specialization-content"><span>01 / Women's Health</span>
+              <h3>Preventive Wellness</h3>
+              <p>Proactive care designed to help you understand and protect your health before concerns become problems.
+              </p><a href="./404.html">Discover care <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="specialization-card">
+            <div class="specialization-number">02</div>
+            <div class="specialization-image"><img
+                src="assets/1594824476967-48c8b964273f.webp"
+                alt="Gynecological Care Doctor Specialist"></div>
+            <div class="specialization-content"><span>02 / Specialized Care</span>
+              <h3>Gynecological Care</h3>
+              <p>Compassionate specialist care across every stage of a woman's reproductive health journey.</p><a
+                href="./404.html">Discover care <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="specialization-card">
+            <div class="specialization-number">03</div>
+            <div class="specialization-image"><img
+                src="assets/1551836022-d5d88e9218df.webp"
+                alt="Advanced Diagnostic Screening"></div>
+            <div class="specialization-content"><span>03 / Diagnostics</span>
+              <h3>Advanced Screening</h3>
+              <p>Modern diagnostic pathways that make complex health questions easier to understand.</p><a
+                href="./404.html">Discover care <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="specialization-card">
+            <div class="specialization-number">04</div>
+            <div class="specialization-image"><img
+                src="assets/1516549655169-df83a0774514.webp"
+                alt="Healthcare specialist providing long-term wellness care"></div>
+            <div class="specialization-content"><span>04 / Lifelong Wellness</span>
+              <h3>Long-Term Health</h3>
+              <p>Ongoing support, monitoring and guidance to help you thrive beyond a single appointment.</p><a
+                href="./404.html">Discover care <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY STORY -->
+    <section class="why-story-section">
+      <div class="container">
+        <div class="why-layout">
+          <div class="why-intro">
+            <span class="section-eyebrow">WHY STACKLY</span>
+            <h2>More than care. A relationship you can <span>trust.</span></h2>
+            <div class="why-progress"><span class="why-progress-fill"></span></div>
+          </div>
+
+          <div class="why-story">
+            <article class="why-story-item active">
+              <div class="why-story-number">01</div>
+              <div>
+                <h3>Expertise you can rely on</h3>
+                <p>Experienced specialists bring depth of knowledge to every consultation, diagnosis and treatment
+                  decision.</p>
+              </div>
+            </article>
+            <article class="why-story-item">
+              <div class="why-story-number">02</div>
+              <div>
+                <h3>Personalized from day one</h3>
+                <p>No two patients are the same. Your care plan should reflect your body, your lifestyle and your goals.
+                </p>
+              </div>
+            </article>
+            <article class="why-story-item">
+              <div class="why-story-number">03</div>
+              <div>
+                <h3>Modern without feeling clinical</h3>
+                <p>Advanced technology is thoughtfully integrated into an environment designed to feel calm, warm and
+                  welcoming.</p>
+              </div>
+            </article>
+            <article class="why-story-item">
+              <div class="why-story-number">04</div>
+              <div>
+                <h3>Comfort is part of treatment</h3>
+                <p>We believe feeling heard, respected and comfortable should never be an optional part of healthcare.
+                </p>
+              </div>
+            </article>
+            <article class="why-story-item">
+              <div class="why-story-number">05</div>
+              <div>
+                <h3>Here for the long term</h3>
+                <p>Our goal is not simply to treat today's concern. It is to support your health for years to come.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTORS -->
+    <section class="doctors-section">
+      <div class="container">
+        <div class="doctors-heading">
+          <div><span class="section-eyebrow">OUR SPECIALISTS</span>
+            <h2>Meet the people behind your <span>care.</span></h2>
+          </div>
+          <p>Experienced professionals committed to making every patient feel heard, understood and supported.</p>
+        </div>
+
+        <div class="doctor-list">
+          <a class="doctor-row" href="./404.html"
+            data-doctor-image="assets/1559839734-2b71ea197ec2.webp">
+            <span class="doctor-row-number">01</span><span class="doctor-row-name"><strong>Dr. Nusrat
+                Rahman</strong><small>General Physician</small></span><span class="doctor-row-specialty">Preventive
+              Care</span><span class="doctor-row-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a class="doctor-row" href="./404.html"
+            data-doctor-image="assets/1594824476967-48c8b964273f.webp">
+            <span class="doctor-row-number">02</span><span class="doctor-row-name"><strong>Dr. Sarah
+                Williams</strong><small>Women's Health Specialist</small></span><span
+              class="doctor-row-specialty">Gynecological Care</span><span class="doctor-row-arrow"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a class="doctor-row" href="./404.html"
+            data-doctor-image="assets/1622253692010-333f2da6031d.webp">
+            <span class="doctor-row-number">03</span><span class="doctor-row-name"><strong>Dr. Emily
+                Carter</strong><small>Consultant Physician</small></span><span class="doctor-row-specialty">Women's
+              Wellness</span><span class="doctor-row-arrow"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a class="doctor-row" href="./404.html"
+            data-doctor-image="assets/1579684385127-1ef15d508118.webp">
+            <span class="doctor-row-number">04</span><span class="doctor-row-name"><strong>Dr. Maya
+                Anderson</strong><small>Senior Specialist</small></span><span class="doctor-row-specialty">Advanced
+              Diagnostics</span><span class="doctor-row-arrow"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+      </div>
+      <div class="doctor-hover-preview" aria-hidden="true"><img src="" alt=""></div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="journey-section">
+      <div class="container">
+        <div class="journey-layout">
+          <div class="journey-intro">
+            <span class="section-eyebrow">YOUR JOURNEY</span>
+            <h2>From your first question to <span>feeling better.</span></h2>
+            <p>Healthcare should never feel confusing. We make each step clear, personal and supportive.</p>
+          </div>
+
+          <div class="journey-steps">
+            <div class="journey-line"><span class="journey-line-progress"></span></div>
+            <article class="journey-step active">
+              <div class="journey-step-marker">01</div>
+              <div class="journey-step-content"><span>START HERE</span>
+                <h3>Discover</h3>
+                <p>Tell us what you are experiencing and what matters most to you.</p>
+              </div>
+            </article>
+            <article class="journey-step">
+              <div class="journey-step-marker">02</div>
+              <div class="journey-step-content"><span>STEP TWO</span>
+                <h3>Consult</h3>
+                <p>Meet with the right specialist and have an honest, comfortable conversation.</p>
+              </div>
+            </article>
+            <article class="journey-step">
+              <div class="journey-step-marker">03</div>
+              <div class="journey-step-content"><span>STEP THREE</span>
+                <h3>Understand</h3>
+                <p>Get clear answers through thoughtful examination and appropriate diagnostics.</p>
+              </div>
+            </article>
+            <article class="journey-step">
+              <div class="journey-step-marker">04</div>
+              <div class="journey-step-content"><span>STEP FOUR</span>
+                <h3>Treat</h3>
+                <p>Build a treatment approach that is tailored to your individual needs.</p>
+              </div>
+            </article>
+            <article class="journey-step">
+              <div class="journey-step-marker">05</div>
+              <div class="journey-step-content"><span>STEP FIVE</span>
+                <h3>Recover</h3>
+                <p>Receive guidance, follow-up and support throughout recovery.</p>
+              </div>
+            </article>
+            <article class="journey-step">
+              <div class="journey-step-marker">06</div>
+              <div class="journey-step-content"><span>THE GOAL</span>
+                <h3>Thrive</h3>
+                <p>Continue building a healthier, more confident future.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="statistics-section">
+      <div class="container">
+        <div class="statistics-header">
+          <span class="section-eyebrow">CARE THAT MAKES A DIFFERENCE</span>
+          <h2>Numbers tell part of the <span>story.</span></h2>
+        </div>
+
+        <div class="statistics-grid">
+          <article class="stat-block">
+            <div class="stat-number"><span class="counter" data-value="12">0</span><sup>+</sup></div>
+            <h3>Years of Experience</h3>
+            <p>Combining clinical expertise with compassionate care.</p>
+          </article>
+          <article class="stat-block stat-radial">
+            <div class="radial-progress" data-progress="96"><svg viewBox="0 0 120 120">
+                <circle class="radial-track" cx="60" cy="60" r="50"></circle>
+                <circle class="radial-value" cx="60" cy="60" r="50"></circle>
+              </svg><strong><span class="radial-counter">0</span>%</strong></div>
+            <h3>Patient Satisfaction</h3>
+            <p>Because feeling cared for matters.</p>
+          </article>
+          <article class="stat-block">
+            <div class="stat-number"><span class="counter" data-value="4000">0</span><sup>+</sup></div>
+            <h3>Patients Supported</h3>
+            <p>Thousands of women trusting us with their health.</p>
+          </article>
+          <article class="stat-block">
+            <div class="stat-number"><span class="counter" data-value="24">0</span><sup>/7</sup></div>
+            <h3>Care &amp; Support</h3>
+            <p>Help when you need guidance and reassurance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials-header">
+          <div><span class="section-eyebrow">PATIENT STORIES</span>
+            <h2>Care that people <span>remember.</span></h2>
+          </div>
+          <p>Every experience is different. The feeling of being genuinely listened to should not be.</p>
+        </div>
+      </div>
+
+      <div class="testimonial-marquee">
+        <div class="testimonial-track">
+          <article class="testimonial-card spotlight-card">
+            <div class="testimonial-top"><span>★★★★★</span><span>01</span></div>
+            <blockquote>“I finally felt like someone was actually listening to me instead of rushing through the
+              appointment.”</blockquote>
+            <div class="testimonial-author"><span>A</span>
+              <div><strong>Anonymous Patient</strong><small>Women's Wellness</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card">
+            <div class="testimonial-top"><span>★★★★★</span><span>02</span></div>
+            <blockquote>“The entire experience felt calm, organized and incredibly professional.”</blockquote>
+            <div class="testimonial-author"><span>S</span>
+              <div><strong>Anonymous Patient</strong><small>Specialist Care</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card featured-testimonial">
+            <div class="testimonial-top"><span>★★★★★</span><span>03</span></div>
+            <blockquote>“What stood out most was how personal everything felt. I never felt like just another
+              appointment.”</blockquote>
+            <div class="testimonial-author"><span>M</span>
+              <div><strong>Anonymous Patient</strong><small>Preventive Care</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card">
+            <div class="testimonial-top"><span>★★★★★</span><span>04</span></div>
+            <blockquote>“They explained everything clearly and gave me confidence in what came next.”</blockquote>
+            <div class="testimonial-author"><span>R</span>
+              <div><strong>Anonymous Patient</strong><small>Diagnostics</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card">
+            <div class="testimonial-top"><span>★★★★★</span><span>05</span></div>
+            <blockquote>“A very different healthcare experience. Warm, thoughtful and genuinely reassuring.”
+            </blockquote>
+            <div class="testimonial-author"><span>N</span>
+              <div><strong>Anonymous Patient</strong><small>Long-Term Wellness</small></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card spotlight-card" aria-hidden="true">
+            <div class="testimonial-top"><span>★★★★★</span><span>01</span></div>
+            <blockquote>“I finally felt like someone was actually listening to me instead of rushing through the
+              appointment.”</blockquote>
+            <div class="testimonial-author"><span>A</span>
+              <div><strong>Anonymous Patient</strong><small>Women's Wellness</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card" aria-hidden="true">
+            <div class="testimonial-top"><span>★★★★★</span><span>02</span></div>
+            <blockquote>“The entire experience felt calm, organized and incredibly professional.”</blockquote>
+            <div class="testimonial-author"><span>S</span>
+              <div><strong>Anonymous Patient</strong><small>Specialist Care</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card featured-testimonial" aria-hidden="true">
+            <div class="testimonial-top"><span>★★★★★</span><span>03</span></div>
+            <blockquote>“What stood out most was how personal everything felt. I never felt like just another
+              appointment.”</blockquote>
+            <div class="testimonial-author"><span>M</span>
+              <div><strong>Anonymous Patient</strong><small>Preventive Care</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card" aria-hidden="true">
+            <div class="testimonial-top"><span>★★★★★</span><span>04</span></div>
+            <blockquote>“They explained everything clearly and gave me confidence in what came next.”</blockquote>
+            <div class="testimonial-author"><span>R</span>
+              <div><strong>Anonymous Patient</strong><small>Diagnostics</small></div>
+            </div>
+          </article>
+          <article class="testimonial-card spotlight-card" aria-hidden="true">
+            <div class="testimonial-top"><span>★★★★★</span><span>05</span></div>
+            <blockquote>“A very different healthcare experience. Warm, thoughtful and genuinely reassuring.”
+            </blockquote>
+            <div class="testimonial-author"><span>N</span>
+              <div><strong>Anonymous Patient</strong><small>Long-Term Wellness</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section">
+      <div class="final-cta-image"><img
+          src="assets/1584515933487-779824d29309.webp" alt="">
+      </div>
+      <div class="final-cta-overlay"></div>
+      <div class="final-cta-content">
+        <span class="section-eyebrow">YOUR HEALTH MATTERS</span>
+        <h2>Your next chapter deserves <em>better care.</em></h2>
+        <p>Take the first step toward healthcare that listens, understands and supports you.</p>
+        <div class="final-cta-actions">
+          <a href="404.html" class="btn btn-primary"><span>Book a Schedule</span><span
+              class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span></a>
+          <a href="404.html" class="final-text-link">Explore our services <i
+              class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Column 1: Brand & Socials -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="site-logo footer-logo">
+            <img src="logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+          </a>
+
+          <p class="footer-brand-desc">
+            The modern healthcare platform for women ready to experience compassionate care and live healthier, happier lives.
+          </p>
+
+          <div class="footer-socials">
+            <a href="404.html" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="404.html" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="404.html" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.74l-.44 3h-2.3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="404.html" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="html/services.html">Services</a></li>
+            <li><a href="html/about.html">About</a></li>
+            <li><a href="html/blog.html">Blog</a></li>
+            <li><a href="html/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="404.html">Our Story</a></li>
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Press</a></li>
+            <li><a href="404.html">Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Sales -->
+        <div class="footer-col footer-contact-col">
+          <h4>Contact Sales</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="404.html">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="404.html">sales@Stackly.com</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a href="404.html">Salem, Tamil Nadu</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Privacy</a>
+          <a href="404.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('pageLoader');
+      if (loader) loader.classList.add('hidden');
+
+      if (!window.gsap) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!reduceMotion) {
+        const hero = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+        hero
+          .from('.site-header', { y: -30, opacity: 0, duration: 0.6 })
+          .from('.hero-badge-wrap', { y: 20, opacity: 0 }, '-=0.25')
+          .from('.hero-title', { y: 30, opacity: 0, duration: 0.9 }, '-=0.45')
+          .from('.hero-description', { y: 20, opacity: 0 }, '-=0.55')
+          .from('.hero-actions', { y: 20, opacity: 0 }, '-=0.55')
+          .from('.hero-social-proof', { y: 20, opacity: 0 }, '-=0.55')
+          .from('.doctor-backdrop', { scale: 0.94, opacity: 0, duration: 1 }, '-=0.8')
+          .from('.floating-features-card', { x: -20, opacity: 0 }, '-=0.5')
+          .from('.doctor-mini-card', { x: 20, opacity: 0 }, '-=0.5')
+          .from('.companion-card', { y: 20, opacity: 0 }, '-=0.5');
+
+        gsap.to('.floating-features-card', { y: -8, duration: 3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+        gsap.to('.doctor-mini-card', { y: -10, duration: 3.4, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+        gsap.to('.companion-card', { y: -6, duration: 2.7, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+
+        gsap.utils.toArray('.reveal-up').forEach(el => {
+          gsap.from(el, {
+            y: 55, opacity: 0, duration: 0.9, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+          });
+        });
+
+        gsap.to('.trust-track', { xPercent: -50, duration: 30, ease: 'none', repeat: -1 });
+
+
+        // WHY STACKLY — animated metrics
+        const whyMetrics = gsap.utils.toArray('.why-counter');
+
+        if (whyMetrics.length) {
+          ScrollTrigger.create({
+            trigger: '#why-stackly',
+            start: 'top 72%',
+            once: true,
+            onEnter: () => {
+              whyMetrics.forEach(counter => {
+                const target = Number(counter.dataset.value || 0);
+                const isCompact = counter.dataset.format === 'compact';
+                const state = { value: 0 };
+
+                gsap.to(state, {
+                  value: target,
+                  duration: 1.8,
+                  delay: 0.12,
+                  ease: 'power2.out',
+                  onUpdate: () => {
+                    const value = Math.round(state.value);
+
+                    if (isCompact) {
+                      counter.textContent =
+                        value >= 1000
+                          ? `${(value / 1000).toFixed(value >= 1000 && value < 10000 ? 1 : 0)}K`
+                          : value.toLocaleString();
+                    } else {
+                      counter.textContent = value.toLocaleString();
+                    }
+                  },
+                  onComplete: () => {
+                    counter.textContent = isCompact
+                      ? '4K'
+                      : target.toLocaleString();
+                  }
+                });
+              });
+            }
+          });
+        }
+
+        gsap.from('.service-art-card', {
+          y: 60, opacity: 0, stagger: 0.1, duration: 0.8,
+          scrollTrigger: { trigger: '.services-art-grid', start: 'top 80%', once: true }
+        });
+
+        if (window.innerWidth > 768) {
+          const track = document.querySelector('.specializations-track');
+          const section = document.querySelector('.specializations-section');
+
+          if (track && section && track.scrollWidth > window.innerWidth) {
+            const amount = () => Math.max(0, track.scrollWidth - window.innerWidth + 80);
+            gsap.to(track, {
+              x: () => -amount(),
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                start: 'top top',
+                end: () => '+=' + (amount() + window.innerHeight),
+                pin: true,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                onUpdate: self => {
+                  const current = document.querySelector('.progress-current');
+                  if (current) current.textContent = String(Math.min(4, Math.max(1, Math.ceil(self.progress * 4)))).padStart(2, '0');
+                }
+              }
+            });
+          }
+        }
+
+        const whyItems = gsap.utils.toArray('.why-story-item');
+        whyItems.forEach((item, index) => {
+          ScrollTrigger.create({
+            trigger: item,
+            start: 'top 60%',
+            end: 'bottom 40%',
+            onEnter: () => activateStory(index),
+            onEnterBack: () => activateStory(index)
+          });
+        });
+
+        function activateStory(index) {
+          whyItems.forEach((item, i) => item.classList.toggle('active', i === index));
+          const fill = document.querySelector('.why-progress-fill');
+          if (fill) gsap.to(fill, { height: ((index + 1) / whyItems.length) * 100 + '%', duration: 0.35 });
+        }
+
+        const journeySteps = gsap.utils.toArray('.journey-step');
+        journeySteps.forEach((step, index) => {
+          ScrollTrigger.create({
+            trigger: step,
+            start: 'top 65%',
+            end: 'bottom 35%',
+            onEnter: () => activateJourney(index),
+            onEnterBack: () => activateJourney(index)
+          });
+        });
+
+        function activateJourney(index) {
+          journeySteps.forEach((step, i) => step.classList.toggle('active', i === index));
+          const fill = document.querySelector('.journey-line-progress');
+          if (fill) gsap.to(fill, { height: ((index + 1) / journeySteps.length) * 100 + '%', duration: 0.35 });
+        }
+
+        const doctorRows = document.querySelectorAll('.doctor-row');
+        const doctorList = document.querySelector('.doctor-list');
+        const preview = document.querySelector('.doctor-hover-preview');
+        const previewImage = preview ? preview.querySelector('img') : null;
+
+        if (preview && previewImage && window.innerWidth > 768) {
+          const hidePreview = () => {
+            gsap.to(preview, { autoAlpha: 0, scale: 0.94, duration: 0.2 });
+          };
+
+          doctorRows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+              previewImage.src = row.dataset.doctorImage;
+              gsap.to(preview, { autoAlpha: 1, scale: 1, duration: 0.25 });
+            });
+            row.addEventListener('mousemove', e => {
+              gsap.to(preview, { x: e.clientX + 25, y: e.clientY - 165, duration: 0.2 });
+            });
+            row.addEventListener('mouseleave', hidePreview);
+          });
+
+          if (doctorList) {
+            doctorList.addEventListener('mouseleave', hidePreview);
+          }
+          window.addEventListener('scroll', hidePreview, { passive: true });
+        }
+
+        const statistics = document.querySelector('.statistics-section');
+        if (statistics) {
+          ScrollTrigger.create({
+            trigger: statistics,
+            start: 'top 70%',
+            once: true,
+            onEnter: () => {
+              document.querySelectorAll('.counter').forEach(el => {
+                const target = Number(el.dataset.value);
+                const obj = { value: 0 };
+                gsap.to(obj, { value: target, duration: 2, ease: 'power2.out', onUpdate: () => el.textContent = Math.round(obj.value).toLocaleString() });
+              });
+
+              document.querySelectorAll('.radial-progress').forEach(radial => {
+                const target = Number(radial.dataset.progress);
+                const value = radial.querySelector('.radial-value');
+                const text = radial.querySelector('.radial-counter');
+                const circumference = 2 * Math.PI * 50;
+                value.style.strokeDasharray = circumference;
+                value.style.strokeDashoffset = circumference;
+
+                const obj = { value: 0 };
+                gsap.to(obj, {
+                  value: target, duration: 2, ease: 'power2.out',
+                  onUpdate: () => {
+                    value.style.strokeDashoffset = circumference - circumference * (obj.value / 100);
+                    text.textContent = Math.round(obj.value);
+                  }
+                });
+              });
+            }
+          });
+        }
+
+        const testimonialTrack = document.querySelector('.testimonial-track');
+        if (testimonialTrack) {
+          const animation = gsap.to(testimonialTrack, { xPercent: -50, duration: 38, ease: 'none', repeat: -1 });
+          testimonialTrack.addEventListener('mouseenter', () => animation.pause());
+          testimonialTrack.addEventListener('mouseleave', () => animation.resume());
+        }
+
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+          card.addEventListener('pointermove', e => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--spotlight-x', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--spotlight-y', `${e.clientY - rect.top}px`);
+          });
+        });
+
+        gsap.to('.final-cta-image img', {
+          yPercent: -12, ease: 'none',
+          scrollTrigger: { trigger: '.final-cta-section', start: 'top bottom', end: 'bottom top', scrub: 1 }
+        });
+      } else {
+        document.querySelectorAll('.counter').forEach(el => {
+          el.textContent = Number(el.dataset.value).toLocaleString();
+        });
+
+        document.querySelectorAll('.why-counter').forEach(el => {
+          const value = Number(el.dataset.value || 0);
+          el.textContent = el.dataset.format === 'compact'
+            ? '4K'
+            : value.toLocaleString();
+        });
+
+        document.querySelectorAll('.radial-counter').forEach(el => {
+          el.textContent = '96';
+        });
+      }
+    });
+
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNavigation = document.querySelector('.mobile-navigation');
+
+    if (menuToggle && mobileNavigation) {
+      menuToggle.addEventListener('click', () => {
+        const open = menuToggle.classList.toggle('is-open');
+        mobileNavigation.classList.toggle('is-open', open);
+        document.body.classList.toggle('no-scroll', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      mobileNavigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('is-open');
+          mobileNavigation.classList.remove('is-open');
+          document.body.classList.remove('no-scroll');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

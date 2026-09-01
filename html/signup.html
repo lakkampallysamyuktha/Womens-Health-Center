@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Account — Stackly</title>
+  <meta
+    name="description"
+    content="Create your Stackly account."
+  >
+
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/signup.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <main class="signup-page">
+
+    <!-- ================================================================
+         Decorative Background
+         ================================================================ -->
+    <div class="signup-bg-orb signup-bg-orb-one"></div>
+    <div class="signup-bg-orb signup-bg-orb-two"></div>
+    <div class="signup-pattern"></div>
+
+
+    <!-- ================================================================
+         Header
+         ================================================================ -->
+    <header class="signup-header">
+
+      <a
+        href="../index.html"
+        class="signup-logo"
+        aria-label="Stackly Home"
+      >
+
+        <img
+          src="../logo_trimmed.webp"
+          alt="Stackly"
+        >
+
+      </a>
+
+
+      <a href="login.html" class="login-existing">
+
+        <span>Already have an account?</span>
+
+        <strong>Sign in</strong>
+
+        <span class="login-arrow">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+
+      </a>
+
+    </header>
+
+
+    <!-- ================================================================
+         Signup Layout
+         ================================================================ -->
+    <!-- ================================================================
+         Signup Layout
+         ================================================================ -->
+    <section class="signup-main">
+
+      <div class="signup-container">
+
+        <!-- ============================================================
+             Left Visual Panel (Desktop)
+             ============================================================ -->
+        <div class="signup-visual">
+
+          <div class="visual-content">
+
+            <span class="visual-eyebrow">
+              <span class="eyebrow-dot"></span>
+              Your health, simplified
+            </span>
+
+            <h1>
+              Join Stacklyfor
+              <span>better health.</span>
+            </h1>
+
+            <p>
+              Create your account to book consultations, track wellness goals, and access personalized healthcare anytime.
+            </p>
+
+            <div class="visual-features">
+
+              <div class="visual-feature">
+                <span class="visual-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </span>
+
+                <div>
+                  <strong>Fast & easy setup</strong>
+                  <span>Get started in less than 2 minutes.</span>
+                </div>
+              </div>
+
+
+              <div class="visual-feature">
+                <span class="visual-feature-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </span>
+
+                <div>
+                  <strong>Verified care team</strong>
+                  <span>Connect with top-rated specialists.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="visual-orb"></div>
+
+        </div>
+
+
+        <!-- ============================================================
+             Right Form Panel
+             ============================================================ -->
+        <div class="signup-form-panel">
+
+          <div class="signup-card">
+
+            <!-- Form Top Bar: Logo & Back to Home -->
+            <div class="form-top-bar">
+              <a href="../index.html" class="form-logo" aria-label="StacklyHome">
+                <img src="../logo_trimmed.webp" alt="Stackly" class="form-logo-img">
+              </a>
+
+              <a href="../index.html" class="back-home-link">
+                <span>Back to home</span>
+
+                <span class="back-home-icon">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </span>
+              </a>
+            </div>
+
+            <div class="signup-heading">
+
+              <span class="signup-kicker">
+                JOIN Stackly
+              </span>
+
+              <h1>
+                Create your account
+              </h1>
+
+              <p>
+                Start your personalized healthcare journey with Stackly.
+              </p>
+
+            </div>
+
+
+            <!-- ============================================================
+                 Signup Form
+                 ============================================================ -->
+            <form id="signupForm" novalidate>
+
+              <!-- Email -->
+              <div class="signup-field">
+
+                <label for="signupEmail">
+                  Email address
+                </label>
+
+                <div class="signup-input-wrapper">
+
+                  <span class="signup-input-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                      <polyline points="3 7 12 13 21 7"></polyline>
+                    </svg>
+                  </span>
+
+                  <input
+                    type="email"
+                    id="signupEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    spellcheck="false"
+                    autocapitalize="none"
+                    required
+                  >
+
+                </div>
+
+                <span
+                  class="signup-error"
+                  id="signupEmailError"
+                  aria-live="polite"
+                ></span>
+
+              </div>
+
+
+              <!-- Password -->
+              <div class="signup-field">
+
+                <label for="signupPassword">
+                  Password
+                </label>
+
+                <div class="signup-input-wrapper">
+
+                  <span class="signup-input-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                    </svg>
+                  </span>
+
+                  <input
+                    type="password"
+                    id="signupPassword"
+                    name="password"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                    required
+                  >
+
+                  <button
+                    type="button"
+                    class="signup-password-toggle"
+                    id="signupPasswordToggle"
+                    aria-label="Show password"
+                    aria-pressed="false"
+                  >
+
+                    <svg
+                      class="signup-eye-open"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+
+                    <svg
+                      class="signup-eye-closed"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 3l18 18"></path>
+                      <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"></path>
+                      <path d="M9.9 5.1A10.8 10.8 0 0 1 12 5c6.5 0 10 7 10 7a17.8 17.8 0 0 1-3.1 4.2"></path>
+                      <path d="M6.2 6.2C3.4 8.1 2 12 2 12s3.5 7 10 7c1.2 0 2.3-.2 3.3-.6"></path>
+                    </svg>
+
+                  </button>
+
+                </div>
+
+                <span
+                  class="signup-error"
+                  id="signupPasswordError"
+                  aria-live="polite"
+                ></span>
+
+              </div>
+
+
+              <!-- Confirm Password -->
+              <div class="signup-field">
+
+                <label for="signupConfirmPassword">
+                  Confirm password
+                </label>
+
+                <div class="signup-input-wrapper">
+
+                  <span class="signup-input-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 7l-9 9-4-4"></path>
+                      <path d="M4 4h16v16H4z"></path>
+                    </svg>
+                  </span>
+
+                  <input
+                    type="password"
+                    id="signupConfirmPassword"
+                    name="confirmPassword"
+                    placeholder="Repeat your password"
+                    autocomplete="new-password"
+                    required
+                  >
+
+                  <button
+                    type="button"
+                    class="signup-password-toggle confirm-toggle"
+                    id="signupConfirmPasswordToggle"
+                    aria-label="Show password"
+                    aria-pressed="false"
+                  >
+
+                    <svg
+                      class="signup-eye-open"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+
+                    <svg
+                      class="signup-eye-closed"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M3 3l18 18"></path>
+                      <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"></path>
+                      <path d="M9.9 5.1A10.8 10.8 0 0 1 12 5c6.5 0 10 7 10 7a17.8 17.8 0 0 1-3.1 4.2"></path>
+                      <path d="M6.2 6.2C3.4 8.1 2 12 2 12s3.5 7 10 7c1.2 0 2.3-.2 3.3-.6"></path>
+                    </svg>
+
+                  </button>
+
+                </div>
+
+                <span
+                  class="signup-error"
+                  id="signupConfirmError"
+                  aria-live="polite"
+                ></span>
+
+              </div>
+
+
+              <!-- Role -->
+              <div class="signup-field">
+
+                <label for="signupRoleButton">
+                  Account type
+                </label>
+
+                <div
+                  class="signup-custom-select"
+                  id="signupRoleSelect"
+                >
+
+                  <button
+                    type="button"
+                    class="signup-select-trigger"
+                    id="signupRoleButton"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                  >
+
+                    <span class="signup-select-left">
+
+                      <span class="signup-input-icon">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                      </span>
+
+                      <span
+                        class="signup-selected-value placeholder"
+                        id="signupSelectedRole"
+                      >
+                        Select account type
+                      </span>
+
+                    </span>
+
+                    <svg
+                      class="signup-select-arrow"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+
+                  </button>
+
+
+                  <div
+                    class="signup-select-menu"
+                    id="signupRoleMenu"
+                    role="listbox"
+                  >
+
+                    <button
+                      type="button"
+                      class="signup-role-option"
+                      data-value="user"
+                      role="option"
+                    >
+
+                      <span class="signup-role-icon">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                      </span>
+
+                      <span>
+                        <strong>User</strong>
+                        <small>Patient account</small>
+                      </span>
+
+                      <span class="signup-role-check"><i class="fa-solid fa-check"></i></span>
+
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="signup-role-option"
+                      data-value="admin"
+                      role="option"
+                    >
+
+                      <span class="signup-role-icon">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path>
+                          <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                      </span>
+
+                      <span>
+                        <strong>Admin</strong>
+                        <small>Administration account</small>
+                      </span>
+
+                      <span class="signup-role-check"><i class="fa-solid fa-check"></i></span>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+                <input
+                  type="hidden"
+                  id="signupRole"
+                  name="role"
+                >
+
+                <span
+                  class="signup-error"
+                  id="signupRoleError"
+                  aria-live="polite"
+                ></span>
+
+              </div>
+
+
+              <!-- General Message -->
+              <div
+                class="signup-message"
+                id="signupMessage"
+                aria-live="polite"
+              ></div>
+
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="signup-submit"
+                id="signupButton"
+              >
+
+                <span>Create account</span>
+
+                <span class="signup-submit-icon">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+
+              </button>
+
+            </form>
+
+            <p class="auth-switch">
+              Already have an account?
+              <a href="login.html">Sign in</a>
+            </p>
+
+            <p class="signup-footer">
+              By creating an account, you agree to continue to Stackly's
+              secure healthcare platform.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================================================================
+       Signup JavaScript
+       ================================================================ -->
+  <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      // ================================================================
+      // Elements
+      // ================================================================
+
+      const signupForm = document.getElementById('signupForm');
+
+      const emailInput =
+        document.getElementById('signupEmail');
+
+      const passwordInput =
+        document.getElementById('signupPassword');
+
+      const confirmInput =
+        document.getElementById('signupConfirmPassword');
+
+      const passwordToggle =
+        document.getElementById('signupPasswordToggle');
+
+      const confirmToggle =
+        document.getElementById('signupConfirmPasswordToggle');
+
+      const roleSelect =
+        document.getElementById('signupRoleSelect');
+
+      const roleButton =
+        document.getElementById('signupRoleButton');
+
+      const roleMenu =
+        document.getElementById('signupRoleMenu');
+
+      const selectedRole =
+        document.getElementById('signupSelectedRole');
+
+      const roleInput =
+        document.getElementById('signupRole');
+
+      const roleOptions =
+        document.querySelectorAll('.signup-role-option');
+
+      const signupButton =
+        document.getElementById('signupButton');
+
+      const signupMessage =
+        document.getElementById('signupMessage');
+
+
+      // ================================================================
+      // Intro Animation
+      // ================================================================
+
+      const signupTimeline = gsap.timeline({
+        defaults: {
+          ease: 'power3.out'
+        }
+      });
+
+      signupTimeline
+        .from('.signup-card', {
+          y: 35,
+          opacity: 0,
+          duration: 0.85
+        })
+        .from('.form-top-bar', {
+          y: -15,
+          opacity: 0,
+          duration: 0.45
+        }, '-=0.5')
+        .from('.signup-kicker', {
+          y: 12,
+          opacity: 0,
+          duration: 0.4
+        }, '-=0.3')
+        .from('.signup-heading h1', {
+          y: 18,
+          opacity: 0,
+          duration: 0.5
+        }, '-=0.25')
+        .from('.signup-heading p', {
+          y: 12,
+          opacity: 0,
+          duration: 0.4
+        }, '-=0.25')
+        .from('.signup-field', {
+          y: 14,
+          opacity: 0,
+          duration: 0.4,
+          stagger: 0.08
+        }, '-=0.15')
+        .from('.signup-submit', {
+          y: 12,
+          opacity: 0,
+          duration: 0.45
+        }, '-=0.2')
+        .from('.signup-footer', {
+          y: 8,
+          opacity: 0,
+          duration: 0.35
+        }, '-=0.15');
+
+
+      // ================================================================
+      // Password Toggle Function
+      // ================================================================
+
+      function setupPasswordToggle(
+        button,
+        input
+      ) {
+
+        button.addEventListener('click', () => {
+
+          const shouldShow =
+            input.type === 'password';
+
+          input.type =
+            shouldShow ? 'text' : 'password';
+
+          button.classList.toggle(
+            'is-visible',
+            shouldShow
+          );
+
+          button.setAttribute(
+            'aria-label',
+            shouldShow
+              ? 'Hide password'
+              : 'Show password'
+          );
+
+          button.setAttribute(
+            'aria-pressed',
+            String(shouldShow)
+          );
+
+        });
+
+      }
+
+
+      setupPasswordToggle(
+        passwordToggle,
+        passwordInput
+      );
+
+      setupPasswordToggle(
+        confirmToggle,
+        confirmInput
+      );
+
+
+      // ================================================================
+      // Custom Role Dropdown
+      // ================================================================
+
+      function openRoleMenu() {
+
+        roleSelect.classList.add('is-open');
+        const field = roleSelect.closest('.signup-field');
+        if (field) field.style.zIndex = '1000';
+        roleSelect.style.zIndex = '1000';
+
+        roleButton.setAttribute(
+          'aria-expanded',
+          'true'
+        );
+
+        gsap.fromTo(
+          roleMenu,
+          {
+            opacity: 0,
+            y: -6,
+            scaleY: 0.96
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scaleY: 1,
+            duration: 0.2,
+            ease: 'power2.out'
+          }
+        );
+
+      }
+
+
+      function closeRoleMenu() {
+
+        roleSelect.classList.remove('is-open');
+        const field = roleSelect.closest('.signup-field');
+        if (field) field.style.zIndex = '';
+        roleSelect.style.zIndex = '';
+
+        roleButton.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+
+      roleButton.addEventListener('click', (event) => {
+
+        event.stopPropagation();
+
+        if (
+          roleSelect.classList.contains('is-open')
+        ) {
+          closeRoleMenu();
+        } else {
+          openRoleMenu();
+        }
+
+      });
+
+
+      roleOptions.forEach(option => {
+
+        option.addEventListener('click', () => {
+
+          const value =
+            option.dataset.value;
+
+          const label =
+            option.querySelector('strong')
+              .textContent;
+
+          roleInput.value = value;
+
+          selectedRole.textContent = label;
+
+          selectedRole.classList.remove(
+            'placeholder'
+          );
+
+          roleOptions.forEach(item => {
+
+            item.classList.remove('selected');
+
+            item.setAttribute(
+              'aria-selected',
+              'false'
+            );
+
+          });
+
+          option.classList.add('selected');
+
+          option.setAttribute(
+            'aria-selected',
+            'true'
+          );
+
+          closeRoleMenu();
+
+          clearError('signupRoleError');
+
+        });
+
+      });
+
+
+      document.addEventListener('click', event => {
+
+        if (!roleSelect.contains(event.target)) {
+          closeRoleMenu();
+        }
+
+      });
+
+
+      document.addEventListener('keydown', event => {
+
+        if (event.key === 'Escape') {
+          closeRoleMenu();
+        }
+
+      });
+
+
+      // ================================================================
+      // Validation
+      // ================================================================
+
+      function isValidEmail(email) {
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          .test(email);
+
+      }
+
+
+      function showError(id, message) {
+
+        const element =
+          document.getElementById(id);
+
+        element.textContent = message;
+
+        element
+          .closest('.signup-field')
+          ?.classList.add('has-error');
+
+      }
+
+
+      function clearError(id) {
+
+        const element =
+          document.getElementById(id);
+
+        element.textContent = '';
+
+        element
+          .closest('.signup-field')
+          ?.classList.remove('has-error');
+
+      }
+
+
+      function clearErrors() {
+
+        clearError('signupEmailError');
+        clearError('signupPasswordError');
+        clearError('signupConfirmError');
+        clearError('signupRoleError');
+
+        signupMessage.textContent = '';
+        signupMessage.className = 'signup-message';
+
+      }
+
+
+      // ================================================================
+      // Remove Native Autofill Visual Treatment
+      // ================================================================
+
+      [
+        emailInput,
+        passwordInput,
+        confirmInput
+      ].forEach(input => {
+
+        input.addEventListener(
+          'input',
+          () => {
+            input.classList.add('has-value');
+          }
+        );
+
+      });
+
+
+      // ================================================================
+      // Form Submit
+      // ================================================================
+
+      signupForm.addEventListener('submit', event => {
+
+        event.preventDefault();
+
+        clearErrors();
+
+        const email =
+          emailInput.value.trim();
+
+        const password =
+          passwordInput.value;
+
+        const confirmPassword =
+          confirmInput.value;
+
+        const role =
+          roleInput.value;
+
+        let valid = true;
+
+
+        // Email
+        if (!email) {
+
+          showError(
+            'signupEmailError',
+            'Please enter your email address.'
+          );
+
+          valid = false;
+
+        } else if (!isValidEmail(email)) {
+
+          showError(
+            'signupEmailError',
+            'Please enter a valid email address.'
+          );
+
+          valid = false;
+
+        }
+
+
+        // Password
+        if (!password) {
+
+          showError(
+            'signupPasswordError',
+            'Please create a password.'
+          );
+
+          valid = false;
+
+        } else if (password.length < 6) {
+
+          showError(
+            'signupPasswordError',
+            'Password must contain at least 6 characters.'
+          );
+
+          valid = false;
+
+        }
+
+
+        // Confirm Password
+        if (!confirmPassword) {
+
+          showError(
+            'signupConfirmError',
+            'Please confirm your password.'
+          );
+
+          valid = false;
+
+        } else if (
+          password !== confirmPassword
+        ) {
+
+          showError(
+            'signupConfirmError',
+            'Passwords do not match.'
+          );
+
+          valid = false;
+
+        }
+
+
+        // Role
+        if (!role) {
+
+          showError(
+            'signupRoleError',
+            'Please select an account type.'
+          );
+
+          valid = false;
+
+        }
+
+
+        if (!valid) {
+
+          gsap.fromTo(
+            '.has-error',
+            {
+              x: -4
+            },
+            {
+              x: 0,
+              duration: 0.3,
+              ease: 'power2.out'
+            }
+          );
+
+          return;
+
+        }
+
+
+        // ================================================================
+        // Success State
+        // ================================================================
+
+        signupButton.disabled = true;
+
+        signupButton.classList.add(
+          'is-loading'
+        );
+
+        signupButton
+          .querySelector('span:first-child')
+          .textContent = 'Creating account...';
+
+
+        gsap.to(
+          signupButton,
+          {
+            scale: 0.98,
+            duration: 0.15,
+            yoyo: true,
+            repeat: 1,
+            onComplete: () => {
+
+              signupMessage.textContent =
+                'Account created successfully. Redirecting to login...';
+
+              signupMessage.classList.add(
+                'success'
+              );
+
+
+              gsap.to(
+                signupButton,
+                {
+                  opacity: 0.85,
+                  duration: 0.25
+                }
+              );
+
+
+              setTimeout(() => {
+
+                window.location.href =
+                  'login.html';
+
+              }, 900);
+
+            }
+          }
+        );
+
+      });
+
+
+      // ================================================================
+      // Input Focus Animation
+      // ================================================================
+
+      document
+        .querySelectorAll('.signup-input-wrapper input')
+        .forEach(input => {
+
+          input.addEventListener('focus', () => {
+
+            gsap.to(
+              input.closest(
+                '.signup-input-wrapper'
+              ),
+              {
+                y: -1,
+                duration: 0.2,
+                ease: 'power2.out'
+              }
+            );
+
+          });
+
+
+          input.addEventListener('blur', () => {
+
+            gsap.to(
+              input.closest(
+                '.signup-input-wrapper'
+              ),
+              {
+                y: 0,
+                duration: 0.2,
+                ease: 'power2.out'
+              }
+            );
+
+          });
+
+        });
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog — Stackly Women's Health</title>
+  <meta
+    name="description"
+    content="Explore women's health insights, expert advice, wellness guidance and medical knowledge from Stackly."
+  >
+
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/blog.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <img src="../logo_trimmed.webp" alt="StacklyCare Logo" class="loader-logo">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('pageLoader');
+        if (loader) loader.classList.add('hidden');
+      }, 800);
+    });
+  </script>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+  <header class="site-header blog-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="../404.html" class="site-logo">
+          <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="services.html" class="nav-item">Services</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="blog.html" class="nav-item active">Blog</a>
+          <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <a href="../404.html" class="btn-outline-pill-header">
+          <span>Book a Schedule</span>
+          <span class="circle-arrow" aria-hidden="true">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+    <div class="mobile-navigation">
+      <a href="../index.html">Home</a>
+      <a href="./services.html">Services</a>
+      <a href="./about.html">About</a>
+      <a href="./blog.html" class="active">Blog</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./login.html" class="mobile-nav-cta">Book a Schedule</a>
+    </div>
+
+
+  <main>
+
+    <!-- =========================================================
+         01. HERO — EDITORIAL LAYOUT
+         ========================================================= -->
+    <section class="blog-hero">
+      <div class="blog-hero-orb blog-hero-orb-one"></div>
+      <div class="blog-hero-orb blog-hero-orb-two"></div>
+
+      <div class="container">
+        <div class="blog-hero-grid">
+
+          <div class="blog-hero-copy">
+
+            <div class="blog-eyebrow hero-reveal">
+              <span class="eyebrow-line"></span>
+              <span>THE Stackly JOURNAL</span>
+            </div>
+
+            <h1 class="blog-hero-title">
+              Better
+              <span class="hero-title-accent">health</span>
+              starts with
+              <em>understanding.</em>
+            </h1>
+
+            <p class="blog-hero-description">
+              Thoughtful guidance, expert perspectives and practical knowledge
+              to help you make confident decisions about your health.
+            </p>
+
+            <div class="blog-hero-meta hero-reveal">
+              <span>Health · Wellness · Experts</span>
+              <span class="meta-dot"></span>
+              <span>Updated weekly</span>
+            </div>
+
+          </div>
+
+          <div class="blog-hero-feature">
+
+            <div class="hero-feature-image-wrap">
+              <div class="hero-feature-image-mask">
+                <img
+                  src="../assets/1538108149393-fbbd81895907.webp"
+                  alt="Woman consulting a healthcare professional"
+                  class="hero-feature-image"
+                >
+              </div>
+
+              <div class="hero-image-caption">
+                <span>01</span>
+                <span>CARE BEGINS WITH KNOWLEDGE</span>
+              </div>
+            </div>
+
+            <div class="hero-floating-note">
+              <span class="note-icon"><i class="fa-solid fa-plus"></i></span>
+              <span>Expert-led health information</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         02. FEATURED ARTICLE — CONTENT SPOTLIGHT
+         ========================================================= -->
+    <section class="featured-article-section">
+      <div class="container">
+
+        <div class="section-intro featured-intro">
+          <div>
+            <span class="section-kicker">Editor's Pick</span>
+            <h2>Featured<br><em>perspective</em></h2>
+          </div>
+
+          <p>
+            A closer look at the conversations shaping modern women's
+            healthcare — from prevention to long-term wellbeing.
+          </p>
+        </div>
+
+        <article class="featured-article">
+
+          <div class="featured-image-wrap">
+            <img
+              src="../assets/1584515933487-779824d29309.webp"
+              alt="Healthcare professional speaking with a patient"
+              class="featured-image"
+            >
+
+            <span class="article-category">Women's Wellness</span>
+          </div>
+
+          <div class="featured-content">
+
+            <div class="featured-topline">
+              <span>08 MIN READ</span>
+              <span>JUL 18, 2026</span>
+            </div>
+
+            <h3>
+              The modern approach to
+              <span>women's preventive health</span>
+            </h3>
+
+            <p>
+              Preventive healthcare is more than an annual appointment.
+              Discover how regular screening, informed choices and
+              personalized care can change the way women approach their
+              long-term wellbeing.
+            </p>
+
+            <div class="featured-author">
+              <div class="author-avatar">
+                <img
+                  src="../assets/1559839734-2b71ea197ec2.webp"
+                  alt="Dr. Nusrat Rahman"
+                >
+              </div>
+
+              <div>
+                <strong>Dr. Nusrat Rahman</strong>
+                <span>General Physician</span>
+              </div>
+            </div>
+
+            <a href="../404.html" class="article-read-link">
+              <span>Read full article</span>
+              <span class="read-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         03. CATEGORIES — HORIZONTAL SCROLL
+         ========================================================= -->
+    <section class="categories-section">
+
+      <div class="categories-heading">
+        <div class="container">
+          <div class="categories-heading-inner">
+            <span class="section-kicker">Explore the journal</span>
+            <p>Find information relevant to where you are in your journey.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-track-wrap">
+        <div class="category-track">
+
+          <a href="../404.html" class="category-item active">
+            <span class="category-number">01</span>
+            <span>Women's Wellness</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="category-item">
+            <span class="category-number">02</span>
+            <span>Reproductive Health</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="category-item">
+            <span class="category-number">03</span>
+            <span>Pregnancy &amp; Care</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="category-item">
+            <span class="category-number">04</span>
+            <span>Nutrition</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="category-item">
+            <span class="category-number">05</span>
+            <span>Mental Wellness</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+          <a href="../404.html" class="category-item">
+            <span class="category-number">06</span>
+            <span>Hormonal Health</span>
+            <span class="category-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         04. LATEST ARTICLES — MASONRY
+         ========================================================= -->
+    <section class="latest-articles-section">
+      <div class="container">
+
+        <div class="section-heading-row">
+          <div>
+            <span class="section-kicker">Fresh from the journal</span>
+            <h2>Latest <em>articles</em></h2>
+          </div>
+
+          <a href="../404.html" class="text-link">
+            View all articles
+            <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+
+        <div class="articles-masonry">
+
+          <article class="article-card article-card-large">
+            <div class="article-card-image">
+              <img
+                src="../assets/1515377905703-c4788e51af15.webp"
+                alt="Woman enjoying a healthy lifestyle"
+              >
+              <span class="article-card-tag">Wellness</span>
+            </div>
+
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <span>6 MIN READ</span>
+                <span>AUG 20, 2026</span>
+              </div>
+
+              <h3>
+                Small habits that create
+                lasting changes in women's health
+              </h3>
+
+              <p>
+                Simple daily decisions can have a meaningful impact on
+                your energy, resilience and long-term wellbeing.
+              </p>
+
+              <a href="../404.html" aria-label="Read Small habits that create lasting changes in women's health">
+                Read article <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+          </article>
+
+
+          <article class="article-card">
+            <div class="article-card-image">
+              <img
+                src="../assets/1493836512294-502baa1986e2.webp"
+                alt="Woman practicing mindfulness"
+              >
+              <span class="article-card-tag">Mental Wellness</span>
+            </div>
+
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <span>5 MIN READ</span>
+                <span>AUG 17, 2026</span>
+              </div>
+
+              <h3>
+                Making space for your mental wellbeing
+              </h3>
+
+              <a href="../404.html" aria-label="Read Making space for your mental wellbeing">
+                Read article <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+          </article>
+
+
+          <article class="article-card">
+            <div class="article-card-image">
+              <img
+                src="../assets/1490645935967-10de6ba17061.webp"
+                alt="Healthy nutritious food"
+              >
+              <span class="article-card-tag">Nutrition</span>
+            </div>
+
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <span>7 MIN READ</span>
+                <span>AUG 12, 2026</span>
+              </div>
+
+              <h3>
+                Nutrition foundations every woman should know
+              </h3>
+
+              <a href="../404.html" aria-label="Read Nutrition foundations every woman should know">
+                Read article <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+          </article>
+
+
+          <article class="article-card article-card-wide">
+            <div class="article-card-image">
+              <img
+                src="../assets/1579684385127-1ef15d508118.webp"
+                alt="Doctor reviewing healthcare information"
+              >
+              <span class="article-card-tag">Preventive Care</span>
+            </div>
+
+            <div class="article-card-body">
+              <div class="article-card-meta">
+                <span>8 MIN READ</span>
+                <span>AUG 08, 2026</span>
+              </div>
+
+              <h3>
+                Your preventive health checklist:
+                what to discuss with your doctor
+              </h3>
+
+              <p>
+                A practical guide to preparing for meaningful conversations
+                during your next healthcare visit.
+              </p>
+
+              <a href="../404.html" aria-label="Read Your preventive health checklist">
+                Read article <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         05. POPULAR TOPICS — STACKED DEPTH CARDS
+         ========================================================= -->
+    <section class="popular-topics-section">
+
+      <div class="container">
+
+        <div class="popular-layout">
+
+          <div class="popular-intro">
+            <span class="section-kicker">Most explored</span>
+
+            <h2>
+              Topics worth
+              <em>knowing.</em>
+            </h2>
+
+            <p>
+              Go deeper into the questions women ask most often.
+              Clear information can make healthcare decisions feel
+              less overwhelming.
+            </p>
+
+            <div class="topic-index">
+              <span>06</span>
+              <span>Popular topics</span>
+            </div>
+          </div>
+
+          <div class="topic-stack">
+
+            <a href="../404.html" class="topic-stack-card">
+              <span class="topic-card-number">01</span>
+
+              <div class="topic-card-content">
+                <span>01 — Hormonal Health</span>
+                <h3>Understanding your hormones</h3>
+              </div>
+
+              <span class="topic-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+
+            <a href="../404.html" class="topic-stack-card">
+              <span class="topic-card-number">02</span>
+
+              <div class="topic-card-content">
+                <span>02 — Reproductive Health</span>
+                <h3>Questions worth asking early</h3>
+              </div>
+
+              <span class="topic-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+
+            <a href="../404.html" class="topic-stack-card">
+              <span class="topic-card-number">03</span>
+
+              <div class="topic-card-content">
+                <span>03 — Pregnancy</span>
+                <h3>Preparing for every stage</h3>
+              </div>
+
+              <span class="topic-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+
+            <a href="../404.html" class="topic-stack-card">
+              <span class="topic-card-number">04</span>
+
+              <div class="topic-card-content">
+                <span>04 — Nutrition</span>
+                <h3>Eating for long-term health</h3>
+              </div>
+
+              <span class="topic-card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         06. EXPERT INSIGHTS — SPLIT SCREEN
+         ========================================================= -->
+    <section class="expert-insights-section">
+
+      <div class="expert-image-panel">
+        <div class="expert-image-inner">
+          <img
+            src="../assets/1550831107-1553da8c8464.webp"
+            alt="Female healthcare specialist"
+            class="expert-image"
+          >
+        </div>
+
+        <div class="expert-image-label">
+          <span>EXPERT VOICES</span>
+          <span>06 / 08</span>
+        </div>
+      </div>
+
+      <div class="expert-content-panel">
+
+        <span class="section-kicker">Expert insights</span>
+
+        <h2>
+          Healthcare is
+          <em>personal.</em>
+        </h2>
+
+        <p class="expert-lead">
+          The best healthcare conversations begin with listening.
+          Our specialists share practical perspectives to help you
+          understand your body and make informed choices.
+        </p>
+
+        <div class="expert-quote">
+          <span class="quote-mark">“</span>
+
+          <blockquote>
+            Knowledge doesn't replace medical care.
+            It gives you the confidence to ask better questions
+            and participate in your own care.
+          </blockquote>
+
+          <div class="quote-author">
+            <strong>Dr. Nusrat Rahman</strong>
+            <span>General Physician · Stackly</span>
+          </div>
+        </div>
+
+        <a href="../404.html" class="expert-link">
+          <span>Meet our specialists</span>
+          <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         07. NEWSLETTER — FLOATING FORM
+         ========================================================= -->
+    <section class="newsletter-section">
+
+      <div class="newsletter-orb newsletter-orb-one"></div>
+      <div class="newsletter-orb newsletter-orb-two"></div>
+
+      <div class="container">
+
+        <div class="newsletter-box">
+
+          <div class="newsletter-copy">
+
+            <span class="section-kicker">The weekly note</span>
+
+            <h2>
+              Useful health
+              <em>knowledge.</em>
+              No noise.
+            </h2>
+
+            <p>
+              One thoughtful email each week with expert-backed insights,
+              practical wellness guidance and new stories from Stackly.
+            </p>
+
+          </div>
+
+          <form class="newsletter-form" novalidate>
+
+            <label for="newsletter-email">
+              Your email address
+            </label>
+
+            <div class="newsletter-input-wrap">
+              <input
+                id="newsletter-email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              >
+
+              <button type="submit">
+                <span>Subscribe</span>
+                <span class="newsletter-submit-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </button>
+            </div>
+
+            <div class="newsletter-message" aria-live="polite"></div>
+
+            <small>
+              By subscribing, you agree to receive Stackly updates.
+              You can unsubscribe at any time.
+            </small>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         08. CTA — IMAGE MASK REVEAL
+         ========================================================= -->
+    <section class="blog-cta-section">
+
+      <div class="blog-cta-image">
+        <img
+          src="../assets/1516307365426-bea591f05011.webp"
+          alt="Woman feeling confident and healthy"
+          class="cta-parallax-image"
+        >
+      </div>
+
+      <div class="blog-cta-overlay"></div>
+
+      <div class="container">
+
+        <div class="blog-cta-content">
+
+          <span class="section-kicker cta-kicker">
+            Your next step
+          </span>
+
+          <h2>
+            Information is the
+            <em>beginning.</em>
+          </h2>
+
+          <p>
+            When you're ready to move from reading to personalized care,
+            we're here to listen.
+          </p>
+
+          <a href="../404.html" class="cta-button">
+            <span>Book a Schedule</span>
+            <span class="cta-button-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Column 1: Brand & Socials -->
+        <div class="footer-col footer-brand-col">
+          <a href="../404.html" class="site-logo footer-logo">
+            <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+          </a>
+
+          <p class="footer-brand-desc">
+            The modern healthcare platform for women ready to experience compassionate care and live healthier, happier lives.
+          </p>
+
+          <div class="footer-socials">
+            <a href="../404.html" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.74l-.44 3h-2.3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../404.html">Our Story</a></li>
+            <li><a href="../404.html">Careers</a></li>
+            <li><a href="../404.html">Press</a></li>
+            <li><a href="../404.html">Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Sales -->
+        <div class="footer-col footer-contact-col">
+          <h4>Contact Sales</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="../404.html">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="../404.html">sales@Stackly.com</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a href="../404.html">Salem, Tamil Nadu</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../404.html">Privacy</a>
+          <a href="../404.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       BLOG JAVASCRIPT
+       ========================================================= -->
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ======================================================
+      // Reduced Motion
+      // ======================================================
+
+      const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+
+      // ======================================================
+      // Navigation
+      // ======================================================
+
+      const menuToggle = document.querySelector('.blog-menu-toggle');
+      const nav = document.querySelector('.nav-links');
+
+      if (menuToggle && nav) {
+
+        menuToggle.addEventListener('click', () => {
+
+          const isOpen = menuToggle.classList.toggle('is-open');
+
+          nav.classList.toggle('mobile-open', isOpen);
+
+          menuToggle.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+          );
+
+        });
+
+      }
+
+
+      // ======================================================
+      // Hero Animation
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        const heroTl = gsap.timeline({
+          defaults: {
+            ease: 'power3.out'
+          }
+        });
+
+        heroTl
+          .from('.blog-hero-copy .blog-eyebrow', {
+            y: 25,
+            opacity: 0,
+            duration: 0.7
+          })
+          .from('.blog-hero-title', {
+            y: 55,
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.out'
+          }, '-=0.35')
+          .from('.blog-hero-description', {
+            y: 25,
+            opacity: 0,
+            duration: 0.7
+          }, '-=0.55')
+          .from('.blog-hero-meta', {
+            y: 20,
+            opacity: 0,
+            duration: 0.6
+          }, '-=0.45')
+          .from('.hero-feature-image-mask', {
+            clipPath: 'inset(0 0 100% 0)',
+            duration: 1.35,
+            ease: 'power4.inOut'
+          }, '-=0.9')
+          .from('.hero-floating-note', {
+            x: 25,
+            opacity: 0,
+            duration: 0.65
+          }, '-=0.55');
+
+        gsap.to('.hero-feature-image', {
+          yPercent: 5,
+          scale: 1.06,
+          duration: 6,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+
+      }
+
+
+      // ======================================================
+      // Generic Reveal Animations
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        gsap.utils.toArray(
+          '.section-kicker, .section-intro, .section-heading-row'
+        ).forEach((element) => {
+
+          gsap.from(element, {
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 88%',
+              once: true
+            },
+            y: 35,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+          });
+
+        });
+
+      }
+
+
+      // ======================================================
+      // Featured Article Reveal
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        const featuredTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.featured-article',
+            start: 'top 78%',
+            once: true
+          }
+        });
+
+        featuredTl
+          .from('.featured-image-wrap', {
+            clipPath: 'inset(0 100% 0 0)',
+            duration: 1.1,
+            ease: 'power4.inOut'
+          })
+          .from('.featured-content', {
+            x: 55,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power3.out'
+          }, '-=0.7');
+
+      }
+
+
+      // ======================================================
+      // Category Hover
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        document.querySelectorAll('.category-item').forEach((item) => {
+
+          const arrow = item.querySelector('.category-arrow');
+
+          item.addEventListener('mouseenter', () => {
+
+            gsap.to(item, {
+              x: 8,
+              duration: 0.35,
+              ease: 'power2.out'
+            });
+
+            gsap.to(arrow, {
+              x: 5,
+              y: -5,
+              duration: 0.35,
+              ease: 'power2.out'
+            });
+
+          });
+
+          item.addEventListener('mouseleave', () => {
+
+            gsap.to(item, {
+              x: 0,
+              duration: 0.35,
+              ease: 'power2.out'
+            });
+
+            gsap.to(arrow, {
+              x: 0,
+              y: 0,
+              duration: 0.35,
+              ease: 'power2.out'
+            });
+
+          });
+
+        });
+
+      }
+
+
+      // ======================================================
+      // Article Cards
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        gsap.utils.toArray('.article-card').forEach((card, index) => {
+
+          gsap.from(card, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              once: true
+            },
+            y: 55 + (index * 8),
+            opacity: 0,
+            duration: 0.8,
+            delay: index * 0.06,
+            ease: 'power3.out'
+          });
+
+          const image = card.querySelector('img');
+
+          if (image) {
+
+            card.addEventListener('mouseenter', () => {
+
+              gsap.to(image, {
+                scale: 1.055,
+                duration: 0.7,
+                ease: 'power3.out'
+              });
+
+            });
+
+            card.addEventListener('mouseleave', () => {
+
+              gsap.to(image, {
+                scale: 1,
+                duration: 0.7,
+                ease: 'power3.out'
+              });
+
+            });
+
+          }
+
+        });
+
+      }
+
+
+      // ======================================================
+      // Popular Topic Stack
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        gsap.from('.topic-stack-card', {
+          scrollTrigger: {
+            trigger: '.topic-stack',
+            start: 'top 82%',
+            once: true
+          },
+          y: 80,
+          opacity: 0,
+          stagger: 0.13,
+          duration: 0.8,
+          ease: 'power3.out'
+        });
+
+
+        document.querySelectorAll('.topic-stack-card').forEach((card) => {
+
+          const arrow = card.querySelector('.topic-card-arrow');
+
+          card.addEventListener('mouseenter', () => {
+
+            gsap.to(card, {
+              x: 12,
+              duration: 0.35,
+              ease: 'power3.out'
+            });
+
+            gsap.to(arrow, {
+              x: 7,
+              y: -7,
+              duration: 0.35,
+              ease: 'power3.out'
+            });
+
+          });
+
+          card.addEventListener('mouseleave', () => {
+
+            gsap.to(card, {
+              x: 0,
+              duration: 0.35,
+              ease: 'power3.out'
+            });
+
+            gsap.to(arrow, {
+              x: 0,
+              y: 0,
+              duration: 0.35,
+              ease: 'power3.out'
+            });
+
+          });
+
+        });
+
+      }
+
+
+      // ======================================================
+      // Expert Section
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        const expertTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.expert-insights-section',
+            start: 'top 75%',
+            once: true
+          }
+        });
+
+        expertTl
+          .from('.expert-image-inner', {
+            clipPath: 'inset(0 0 100% 0)',
+            duration: 1.1,
+            ease: 'power4.inOut'
+          })
+          .from('.expert-content-panel > *', {
+            y: 35,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.7,
+            ease: 'power3.out'
+          }, '-=0.65');
+
+
+        gsap.to('.expert-image', {
+          yPercent: -6,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.expert-insights-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+      }
+
+
+      // ======================================================
+      // Newsletter
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        gsap.from('.newsletter-box', {
+          scrollTrigger: {
+            trigger: '.newsletter-box',
+            start: 'top 82%',
+            once: true
+          },
+          y: 60,
+          opacity: 0,
+          scale: 0.98,
+          duration: 1,
+          ease: 'power3.out'
+        });
+
+      }
+
+
+      // ======================================================
+      // Newsletter Form
+      // ======================================================
+
+      const newsletterForm =
+        document.querySelector('.newsletter-form');
+
+      const newsletterInput =
+        document.querySelector('#newsletter-email');
+
+      const newsletterMessage =
+        document.querySelector('.newsletter-message');
+
+      if (newsletterForm) {
+
+        newsletterForm.addEventListener('submit', (event) => {
+
+          event.preventDefault();
+
+          const emailVal = newsletterInput.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+          if (!emailVal) {
+            newsletterMessage.textContent =
+              'Please enter your email address.';
+            newsletterInput.focus();
+            return;
+          }
+
+          if (!emailRegex.test(emailVal)) {
+            newsletterMessage.textContent =
+              'Please enter a valid email address (e.g. name@example.com).';
+            newsletterInput.focus();
+            return;
+          }
+
+          window.location.href = '../404.html';
+
+        });
+
+      }
+
+
+      // ======================================================
+      // CTA Image Mask + Parallax
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        gsap.from('.blog-cta-image', {
+          scrollTrigger: {
+            trigger: '.blog-cta-section',
+            start: 'top 80%',
+            once: true
+          },
+          clipPath: 'inset(100% 0 0 0)',
+          duration: 1.2,
+          ease: 'power4.inOut'
+        });
+
+
+        gsap.to('.cta-parallax-image', {
+          yPercent: -10,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.blog-cta-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+
+        gsap.from('.blog-cta-content > *', {
+          scrollTrigger: {
+            trigger: '.blog-cta-content',
+            start: 'top 80%',
+            once: true
+          },
+          y: 35,
+          opacity: 0,
+          stagger: 0.12,
+          duration: 0.75,
+          ease: 'power3.out'
+        });
+
+      }
+
+
+      // ======================================================
+      // CTA Button
+      // ======================================================
+
+      if (!reduceMotion) {
+
+        const ctaButton =
+          document.querySelector('.cta-button');
+
+        if (ctaButton) {
+
+          const arrow =
+            ctaButton.querySelector('.cta-button-arrow');
+
+          ctaButton.addEventListener('mouseenter', () => {
+
+            gsap.to(arrow, {
+              x: 5,
+              y: -5,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+
+          });
+
+          ctaButton.addEventListener('mouseleave', () => {
+
+            gsap.to(arrow, {
+              x: 0,
+              y: 0,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+
+          });
+
+        }
+
+      }
+
+
+      // ======================================================
+      // Refresh ScrollTrigger After Images Load
+      // ======================================================
+
+      window.addEventListener('load', () => {
+
+        ScrollTrigger.refresh();
+
+      });
+
+    });
+
+    /* =========================================================================
+       MOBILE MENU TOGGLE
+       ========================================================================= */
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNavigation = document.querySelector('.mobile-navigation');
+    if (menuToggle && mobileNavigation) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = menuToggle.classList.toggle('is-open');
+        mobileNavigation.classList.toggle('is-open');
+        document.body.classList.toggle('no-scroll', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly — Doctor Portal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --green: #6da235;
+            --green-dark: #558327;
+            --green-soft: #eef7e7;
+            --blue: #6da235;
+            --blue-dark: #558327;
+            --blue-soft: #eef7e7;
+            --ink: #172016;
+            --muted: #677465;
+            --line: #e2ebe0;
+            --surface: #fff;
+            --bg: #f6faf4;
+            --radius: 20px;
+            --shadow: 0 12px 40px rgba(35, 54, 28, .07);
+            --font: 'Plus Jakarta Sans', system-ui, sans-serif
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        html {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--ink);
+            scroll-behavior: smooth
+        }
+        body {
+            min-height: 100vh;
+            overflow-x: hidden
+        }
+        button {
+            font: inherit;
+            border: 0;
+            cursor: pointer
+        }
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+        .app {
+            display: flex;
+            min-height: 100vh
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 250px;
+            background: #fff;
+            border-right: 1px solid var(--line);
+            padding: 28px 18px;
+            display: flex;
+            flex-direction: column;
+            z-index: 50
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 800;
+            padding: 0 10px 30px
+        }
+        .brand img {
+            width: 140px;
+            object-fit: contain
+        }
+        .brand b {
+            color: var(--blue)
+        }
+        .role-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin: -15px 0 25px 12px;
+            background: var(--blue-soft);
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            text-transform: uppercase;
+            width: fit-content;
+        }
+        .role-chip i {
+            font-size: 10px;
+        }
+        img[src*="logo_trimmed"] {
+            filter: brightness(0) !important;
+        }
+        .profile-mini {
+            background: var(--blue-soft);
+            border-radius: 18px;
+            padding: 14px;
+            margin-bottom: 22px
+        }
+        .profile-mini .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            float: left;
+            margin-right: 10px
+        }
+        .profile-mini strong {
+            display: block;
+            font-size: 13px;
+            padding-top: 3px
+        }
+        .profile-mini span {
+            font-size: 11px;
+            color: var(--muted)
+        }
+        .nav-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            color: #8da090;
+            font-weight: 800;
+            padding: 0 12px 9px
+        }
+        .side-nav {
+            display: grid;
+            gap: 5px
+        }
+        .side-nav button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 13px;
+            background: transparent;
+            color: var(--muted);
+            font-weight: 600;
+            text-align: left;
+            transition: .25s
+        }
+        .side-nav button svg {
+            width: 19px;
+            height: 19px
+        }
+        .side-nav button:hover,
+        .side-nav button.active {
+            background: var(--blue-soft);
+            color: var(--blue-dark)
+        }
+        .user-card-bottom {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--blue-soft);
+            border: 1px solid var(--line);
+            padding: 12px 14px;
+            border-radius: 16px;
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .user-card-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--blue-dark);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .user-card-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .user-card-info strong {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .user-card-info span {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .sidebar-divider {
+            height: 1px;
+            background: var(--line);
+            margin: 14px 0;
+            width: 100%;
+        }
+        .logout {
+            margin-top: 0;
+            background: transparent;
+            color: #b95549;
+            padding: 10px 12px;
+            border-radius: 13px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            cursor: pointer;
+            transition: .2s;
+        }
+        .logout:hover {
+            background: var(--blue-soft);
+            color: #a33b30;
+        }
+        .main {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            padding: 34px clamp(22px, 4vw, 55px);
+            max-width: 1600px
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px
+        }
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--blue);
+            font-weight: 800
+        }
+        .topbar h1 {
+            font-size: clamp(25px, 3vw, 38px);
+            letter-spacing: -.04em;
+            margin-top: 5px
+        }
+        .date-chip {
+            padding: 11px 15px;
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 12px
+        }
+        .panel-section {
+            display: none
+        }
+        .panel-section.active {
+            display: block
+        }
+        .welcome {
+            background: linear-gradient(120deg, #eef7e7, #fff);
+            border: 1px solid #d7e8cf;
+            border-radius: 28px;
+            padding: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px
+        }
+        .welcome h2 {
+            font-size: clamp(23px, 3vw, 35px);
+            letter-spacing: -.04em;
+            margin: 5px 0 8px
+        }
+        .welcome p {
+            color: var(--muted);
+            max-width: 570px;
+            font-size: 14px
+        }
+        .welcome-orb {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(109, 162, 53, .12);
+            margin-right: 30px;
+            position: relative
+        }
+        .welcome-orb:after {
+            content: '\f0f0'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute;
+            inset: 25px;
+            border: 1px solid #b2d49e;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            font-size: 40px
+        }
+        .grid {
+            display: grid;
+            gap: 18px
+        }
+        .stats {
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 20px
+        }
+        .card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 8px 28px rgba(20, 34, 46, .03)
+        }
+        .stat-card {
+            min-height: 120px
+        }
+        .stat-card small {
+            color: var(--muted);
+            font-size: 12px
+        }
+        .stat-card strong {
+            display: block;
+            font-size: 30px;
+            letter-spacing: -.04em;
+            margin: 10px 0 3px
+        }
+        .trend {
+            font-size: 11px;
+            font-weight: 700
+        }
+        .trend.up {
+            color: var(--blue)
+        }
+        .trend.down {
+            color: #c96155
+        }
+        .two {
+            grid-template-columns: 1.45fr .85fr
+        }
+        .three {
+            grid-template-columns: 1fr 1fr 1fr
+        }
+        .card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 17px
+        }
+        .card-head h3 {
+            font-size: 15px
+        }
+        .card-head span {
+            font-size: 11px;
+            color: var(--muted)
+        }
+        .patient-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 14px;
+            background: var(--bg);
+            border: 1px solid var(--line);
+            margin-bottom: 8px
+        }
+        .patient-row:last-child {
+            margin-bottom: 0
+        }
+        .patient-row .pavatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+        .patient-row .info {
+            flex: 1
+        }
+        .patient-row .info strong {
+            font-size: 13px;
+            display: block
+        }
+        .patient-row .info span {
+            font-size: 10px;
+            color: var(--muted)
+        }
+        .patient-row .badge {
+            font-size: 9px;
+            padding: 4px 10px;
+            border-radius: 99px;
+            font-weight: 700
+        }
+        .badge.arrived {
+            background: #e6f0fa;
+            color: var(--blue-dark)
+        }
+        .badge.waiting {
+            background: #fef3dc;
+            color: #9b6e22
+        }
+        .badge.done {
+            background: #eaf4e4;
+            color: #578333
+        }
+        .badge.cancel {
+            background: #ffebe8;
+            color: #a95349
+        }
+        .chart {
+            height: 200px;
+            width: 100%
+        }
+        .chart svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible
+        }
+        .chart-grid {
+            stroke: #e4ece1;
+            stroke-width: 1
+        }
+        .chart-line {
+            fill: none;
+            stroke: var(--blue);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+        .chart-area {
+            fill: rgba(109, 162, 53, .1)
+        }
+        .mobile-menu {
+            display: none
+        }
+        .record-list {
+            display: grid;
+            gap: 10px
+        }
+        .record {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            cursor: pointer !important;
+            transition: all 0.2s ease;
+        }
+        .record:hover {
+            border-color: var(--blue-dark);
+            background: #fafdf8;
+        }
+        .record-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: var(--blue-soft);
+            color: var(--blue);
+            display: grid;
+            place-items: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .record strong {
+            font-size: 12px
+        }
+        .record span {
+            display: block;
+            font-size: 10px;
+            color: var(--muted)
+        }
+        .arrow, b.arrow {
+            margin-left: auto;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--blue-dark);
+            background: var(--blue-soft);
+            padding: 6px 14px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer !important;
+            user-select: none;
+        }
+        .arrow i, b.arrow i {
+            font-size: 11px;
+        }
+        .record:hover .arrow, b.arrow:hover {
+            background: var(--blue-dark);
+            color: #ffffff;
+            cursor: pointer !important;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 27px
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: #d2e4cb
+        }
+        .timeline-item {
+            position: relative;
+            padding: 0 0 23px
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 0 5px var(--blue-soft)
+        }
+        .timeline-item strong {
+            font-size: 12px
+        }
+        .timeline-item p {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 3px
+        }
+        .msg-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e7f0e5
+        }
+        .msg-item:last-child {
+            border: 0
+        }
+        .msg-item .mavatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover
+        }
+        .msg-item .content {
+            flex: 1
+        }
+        .msg-item .content strong {
+            font-size: 12px;
+            display: block
+        }
+        .msg-item .content p {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px
+        }
+        .msg-item .time {
+            font-size: 9px;
+            color: var(--muted);
+            white-space: nowrap
+        }
+        .unread {
+            background: var(--blue-soft);
+            border-radius: 8px;
+            padding: 2px 8px;
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--blue-dark)
+        }
+        .field {
+            margin-bottom: 15px
+        }
+        .field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 6px
+        }
+        .field div {
+            padding: 13px 14px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            font-size: 13px;
+            background: #fafcfd
+        }
+        .profile-grid {
+            grid-template-columns: 1fr 1fr
+        }
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px
+        }
+        .avail-day {
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 10px;
+            background: var(--bg);
+            font-size: 11px;
+            cursor: default
+        }
+        .avail-day .day {
+            font-weight: 600;
+            font-size: 10px;
+            color: var(--muted)
+        }
+        .avail-day .hours {
+            font-size: 9px;
+            color: var(--blue);
+            font-weight: 700
+        }
+        .avail-day.off .hours {
+            color: #a4b79f
+        }
+        .avail-day.active {
+            background: var(--blue-soft)
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e7f0e5;
+            font-size: 12px
+        }
+        .stat-row:last-child {
+            border: 0
+        }
+        .stat-row .label {
+            color: var(--muted)
+        }
+        .stat-row .value {
+            font-weight: 600
+        }
+
+        @media(max-width:1050px) {
+            .sidebar {
+                width: 215px
+            }
+            .main {
+                margin-left: 215px;
+                width: calc(100% - 215px)
+            }
+            .stats {
+                grid-template-columns: 1fr 1fr
+            }
+            .availability-grid {
+                grid-template-columns: repeat(4, 1fr)
+            }
+        }
+        .sidebar-close {
+            display: none;
+        }
+        body.no-scroll {
+            overflow: hidden !important;
+            height: 100vh !important;
+            touch-action: none;
+        }
+        @media(max-width:760px) {
+            .sidebar-close {
+                display: grid;
+                place-items: center;
+                position: absolute;
+                top: 22px;
+                right: 20px;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: #f3f5f1;
+                border: 1px solid var(--line);
+                color: var(--text);
+                font-size: 18px;
+                cursor: pointer;
+                z-index: 10010;
+                transition: background .2s;
+            }
+            .sidebar-close:active {
+                background: #e2e8de;
+            }
+            .sidebar {
+                transform: translateY(-100%);
+                transition: transform .35s cubic-bezier(0.4, 0, 0.2, 1);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                z-index: 9999;
+                background: #ffffff;
+                padding: 45px 24px 35px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                overflow-y: auto;
+                box-shadow: none;
+                text-align: center;
+            }
+            .sidebar.open {
+                transform: translateY(0);
+            }
+            .sidebar .brand {
+                justify-content: center;
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto;
+                padding: 0 0 20px 0;
+            }
+            .sidebar .profile-mini {
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto 24px auto;
+                padding: 18px 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 20px;
+            }
+            .sidebar .profile-mini .avatar {
+                float: none;
+                margin: 0 0 10px 0;
+                width: 58px;
+                height: 58px;
+            }
+            .sidebar .profile-mini strong {
+                font-size: 16px;
+                text-align: center;
+            }
+            .sidebar .profile-mini span,
+            .sidebar .profile-mini small {
+                text-align: center;
+            }
+            .sidebar .nav-label {
+                text-align: center;
+                width: 100%;
+                max-width: 360px;
+                padding: 0 0 12px 0;
+                font-size: 11px;
+                letter-spacing: 0.14em;
+            }
+            .sidebar .side-nav {
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .sidebar .side-nav button,
+            .sidebar .side-nav a {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                font-size: 16px;
+                padding: 14px 20px;
+                border-radius: 14px;
+            }
+            .sidebar .user-card-bottom {
+                width: 100%;
+                max-width: 360px;
+                margin: 20px auto 0 auto;
+                padding: 16px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 18px;
+            }
+            .sidebar .user-card-avatar {
+                margin: 0 0 10px 0;
+                width: 46px;
+                height: 46px;
+                font-size: 18px;
+            }
+            .sidebar .user-card-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            .sidebar .user-card-info strong {
+                font-size: 15px;
+                text-align: center;
+                width: 100%;
+            }
+            .sidebar .user-card-info span {
+                font-size: 12px;
+                text-align: center;
+                width: 100%;
+            }
+            .sidebar .sidebar-divider {
+                width: 100%;
+                max-width: 360px;
+                margin: 16px auto;
+            }
+            .sidebar .logout {
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto;
+                justify-content: center;
+                text-align: center;
+                font-size: 15px;
+                padding: 14px 20px;
+                border-radius: 14px;
+            }
+            .main {
+                margin-left: 0;
+                width: 100%;
+                padding: 22px 16px 35px
+            }
+            .mobile-menu {
+                display: grid;
+                place-items: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 12px;
+                background: #fff;
+                border: 1px solid var(--line);
+                position: fixed;
+                top: 22px;
+                right: 16px;
+                z-index: 10000;
+            }
+            .topbar {
+                gap: 12px;
+                position: sticky;
+                top: 0;
+                background: var(--bg);
+                padding: 22px 16px 15px;
+                margin: -22px -16px 20px -16px;
+                z-index: 40;
+                border-bottom: 1px solid var(--line);
+            }
+            .date-chip {
+                display: none
+            }
+            .welcome {
+                padding: 22px
+            }
+            .welcome-orb {
+                display: none
+            }
+            .stats,
+            .two,
+            .three,
+            .profile-grid {
+                grid-template-columns: 1fr
+            }
+            .card {
+                padding: 17px
+            }
+            .stat-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .availability-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important
+            }
+            .chart-line {
+                stroke-dasharray: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            <a href="../index.html" class="brand"><img src="../logo_trimmed.webp" alt="Stackly"></a>
+            <div class="role-chip"><i class="fa-regular fa-user"></i> ADMIN</div>
+            <div class="nav-label">Practice</div>
+            <nav class="side-nav">
+                <button class="active" data-panel="overview"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</button>
+                <button data-panel="schedule"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>Schedule</button>
+                <button data-panel="patients"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.8-4 2.8-6 6-6s5.2 2 6 6M16 11a3 3 0 1 0 0-6M16 14c2.7.2 4.3 2.2 5 6"/></svg>Patients</button>
+                <button data-panel="messages"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 8v4l2 2"/></svg>Messages</button>
+                <button data-panel="profile"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.1-6 8-6s6.5 2 8 6"/></svg>Profile</button>
+            </nav>
+            <div class="user-card-bottom">
+                <div class="user-card-avatar" id="sideCardAvatar">R</div>
+                <div class="user-card-info">
+                    <strong id="sideCardName">Dr. Rahman</strong>
+                    <span id="sideCardEmail">n.rahman@Stackly.com</span>
+                </div>
+            </div>
+            <div class="sidebar-divider"></div>
+            <button class="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i> &nbsp; Log out</button>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <div class="topbar">
+                <div>
+                    <button class="mobile-menu" id="menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                    <div class="eyebrow" id="eyebrow">Doctor portal</div>
+                    <h1 id="pageTitle">Good morning, <span id="userName">Dr. Rahman</span></h1>
+                </div>
+                <div class="date-chip">Monday · 31 August 2026</div>
+            </div>
+
+            <!-- ===== OVERVIEW ===== -->
+            <section class="panel-section active" id="overview">
+                <div class="welcome reveal">
+                    <div>
+                        <div class="eyebrow">Your practice dashboard</div>
+                        <h2>Welcome back, <span id="welcomeName">Dr. Samyuktha</span>.</h2>
+                        <p>Today you have 7 scheduled consultations. Your next patient arrives at 09:30 AM.</p>
+                    </div>
+                    <div class="welcome-orb"></div>
+                </div>
+
+                <!-- STATS -->
+                <div class="grid stats">
+                    <div class="card stat-card reveal"><small>Today's patients</small><strong>07</strong><span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 2 vs yesterday</span></div>
+                    <div class="card stat-card reveal"><small>Waiting</small><strong>02</strong><span class="trend down">Avg wait 9 min</span></div>
+                    <div class="card stat-card reveal"><small>Completed</small><strong>03</strong><span class="trend up">42% done</span></div>
+                    <div class="card stat-card reveal"><small>New referrals</small><strong>04</strong><span class="trend up">This week</span></div>
+                </div>
+
+                <!-- TWO COLUMN: schedule + patient queue -->
+                <div class="grid two">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-clipboard-list"></i> Today's schedule</h3><span>7 patients</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1494790108377-be9c29b29330.webp" alt=""><div class="info"><strong>Emma Wilson</strong><span>09:30 · General consultation · Room 04</span></div><span class="badge arrived">Arrived</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1507003211169-0a1dd7228f2d.webp" alt=""><div class="info"><strong>Priya Shah</strong><span>10:45 · Nutrition follow-up · Room 02</span></div><span class="badge waiting">Waiting</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1438761681033-6461ffad8d80.webp" alt=""><div class="info"><strong>Olivia Martin</strong><span>11:30 · Diagnostic review · Room 05</span></div><span class="badge waiting">Waiting</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1500648767791-00dcc994a43e.webp" alt=""><div class="info"><strong>Sophia Turner</strong><span>13:00 · General consultation · Room 04</span></div><span class="badge done">Done</span></div>
+                        <div style="margin-top:10px;text-align:right"><span class="muted" style="font-size:10px">+3 more this afternoon</span></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-hourglass-half"></i> Patient queue</h3><span>2 waiting</span></div>
+                        <div class="patient-row" style="border-left:4px solid var(--blue)"><img class="pavatar" src="../assets/1507003211169-0a1dd7228f2d.webp" alt=""><div class="info"><strong>Priya Shah</strong><span>Waiting · 8 min</span></div><span class="badge waiting">Next</span></div>
+                        <div class="patient-row" style="border-left:4px solid #bd8a37"><img class="pavatar" src="../assets/1438761681033-6461ffad8d80.webp" alt=""><div class="info"><strong>Olivia Martin</strong><span>Waiting · 14 min</span></div><span class="badge waiting">2nd</span></div>
+                        <div style="margin-top:12px"><span class="trend up"><i class="fa-solid fa-arrow-trend-down"></i> Average wait: 9 min</span></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Weekly patient volume + recent activity -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-chart-line"></i> Weekly patient volume</h3><span>Last 7 days</span></div>
+                        <div class="chart"><svg viewBox="0 0 700 200" preserveAspectRatio="none"><path class="chart-grid" d="M0 35H700M0 90H700M0 145H700M0 200H700"/><path class="chart-area" d="M0 172 L100 160 L200 148 L300 125 L400 135 L500 90 L600 102 L700 58 L700 200 L0 200Z"/><path class="chart-line" pathLength="1" d="M0 172 L100 160 L200 148 L300 125 L400 135 L500 90 L600 102 L700 58"/></svg></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-rotate"></i> Recent activity</h3><span>Today</span></div>
+                        <div class="timeline">
+                            <div class="timeline-item"><strong>Emma Wilson checked in</strong><p>09:20 · General consultation</p></div>
+                            <div class="timeline-item"><strong>Lab results received</strong><p>09:05 · Blood panel for Priya Shah</p></div>
+                            <div class="timeline-item"><strong>Care plan updated</strong><p>08:45 · Sophia Turner's nutrition plan</p></div>
+                            <div class="timeline-item"><strong>New referral added</strong><p>08:30 · From Dr. Khan</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Quick actions + department stats -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-bolt"></i> Quick actions</h3><span>Common tasks</span></div>
+                        <div style="display:grid;gap:8px">
+                            <button style="background:var(--blue-soft);color:var(--blue-dark);padding:12px;border-radius:12px;font-weight:700;font-size:12px;text-align:left;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-pen-to-square"></i> Write a prescription</button>
+                            <button style="background:var(--blue-soft);color:var(--blue-dark);padding:12px;border-radius:12px;font-weight:700;font-size:12px;text-align:left;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-chart-line"></i> Review lab results</button>
+                            <button style="background:var(--blue-soft);color:var(--blue-dark);padding:12px;border-radius:12px;font-weight:700;font-size:12px;text-align:left;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-calendar-days"></i> Schedule follow-up</button>
+                            <button style="background:var(--blue-soft);color:var(--blue-dark);padding:12px;border-radius:12px;font-weight:700;font-size:12px;text-align:left;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-file-lines"></i> Add consultation note</button>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-hospital"></i> Department stats</h3><span>This month</span></div>
+                        <div class="stat-row"><span class="label">General consultations</span><span class="value">42</span></div>
+                        <div class="stat-row"><span class="label">Nutrition follow-ups</span><span class="value">28</span></div>
+                        <div class="stat-row"><span class="label">Diagnostic reviews</span><span class="value">19</span></div>
+                        <div class="stat-row"><span class="label">Wellness check-ins</span><span class="value">15</span></div>
+                        <div style="margin-top:8px"><span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 12% vs last month</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== SCHEDULE ===== -->
+            <section class="panel-section" id="schedule">
+                <div class="card">
+                    <div class="card-head">
+                        <div>
+                            <div class="eyebrow">Schedule</div>
+                            <h3 style="font-size:25px;margin-top:4px">Your appointments</h3>
+                        </div>
+                        <span>Today · 7 total</span>
+                    </div>
+                    <div style="display:grid;gap:8px">
+                        <div class="patient-row"><img class="pavatar" src="../assets/1494790108377-be9c29b29330.webp" alt=""><div class="info"><strong>Emma Wilson</strong><span>09:30 – 10:15 · General · Room 04</span></div><span class="badge arrived">Arrived</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1507003211169-0a1dd7228f2d.webp" alt=""><div class="info"><strong>Priya Shah</strong><span>10:45 – 11:30 · Nutrition · Room 02</span></div><span class="badge waiting">Waiting</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1438761681033-6461ffad8d80.webp" alt=""><div class="info"><strong>Olivia Martin</strong><span>11:30 – 12:15 · Diagnostics · Room 05</span></div><span class="badge waiting">Waiting</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1500648767791-00dcc994a43e.webp" alt=""><div class="info"><strong>Sophia Turner</strong><span>13:00 – 13:45 · General · Room 04</span></div><span class="badge done">Done</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1506794778202-cad84cf45f1d.webp" alt=""><div class="info"><strong>Ava Thompson</strong><span>14:00 – 14:45 · Wellness · Room 03</span></div><span class="badge">Upcoming</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1554151228-14d9def656e4.webp" alt=""><div class="info"><strong>Mia Walker</strong><span>15:00 – 15:45 · General · Room 04</span></div><span class="badge">Upcoming</span></div>
+                        <div class="patient-row"><img class="pavatar" src="../assets/1544005313-94ddf0286df2.webp" alt=""><div class="info"><strong>Isabella Chen</strong><span>16:00 – 16:45 · Nutrition · Room 02</span></div><span class="badge">Upcoming</span></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Weekly schedule overview -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-calendar-days"></i> This week's load</h3><span>Aug 31 – Sep 06</span></div>
+                        <div class="stat-row"><span class="label">Monday</span><span class="value">7 patients</span></div>
+                        <div class="stat-row"><span class="label">Tuesday</span><span class="value">9 patients</span></div>
+                        <div class="stat-row"><span class="label">Wednesday</span><span class="value">6 patients</span></div>
+                        <div class="stat-row"><span class="label">Thursday</span><span class="value">8 patients</span></div>
+                        <div class="stat-row"><span class="label">Friday</span><span class="value">5 patients</span></div>
+                        <div style="margin-top:8px"><span class="trend up">Total: 35 patients this week</span></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-clock"></i> Time distribution</h3><span>Today</span></div>
+                        <div class="stat-row"><span class="label">Morning (08–12)</span><span class="value">4 patients</span></div>
+                        <div class="stat-row"><span class="label">Afternoon (12–17)</span><span class="value">3 patients</span></div>
+                        <div class="stat-row"><span class="label">Average slot</span><span class="value">35 min</span></div>
+                        <div class="stat-row"><span class="label">Breaks</span><span class="value">12:15–13:00</span></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Room allocation -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-house-medical"></i> Room allocation</h3><span>Today</span></div>
+                    <div class="stat-row"><span class="label">Room 04 · General</span><span class="value">Emma, Sophia, Mia</span></div>
+                    <div class="stat-row"><span class="label">Room 02 · Nutrition</span><span class="value">Priya, Isabella</span></div>
+                    <div class="stat-row"><span class="label">Room 05 · Diagnostics</span><span class="value">Olivia</span></div>
+                    <div class="stat-row"><span class="label">Room 03 · Wellness</span><span class="value">Ava</span></div>
+                </div>
+            </section>
+
+            <!-- ===== PATIENTS ===== -->
+            <section class="panel-section" id="patients">
+                <div class="grid two">
+                    <div class="card">
+                        <div class="card-head">
+                            <div>
+                                <div class="eyebrow">Patients</div>
+                                <h3 style="font-size:25px;margin-top:4px">Your patient panel</h3>
+                            </div>
+                            <span>28 active</span>
+                        </div>
+                        <div style="display:grid;gap:8px">
+                            <div class="patient-row"><img class="pavatar" src="../assets/1494790108377-be9c29b29330.webp" alt=""><div class="info"><strong>Emma Wilson</strong><span>42 · F · Last visit: Aug 31</span></div><span class="badge arrived">Active</span></div>
+                            <div class="patient-row"><img class="pavatar" src="../assets/1507003211169-0a1dd7228f2d.webp" alt=""><div class="info"><strong>Priya Shah</strong><span>38 · F · Last visit: Aug 30</span></div><span class="badge arrived">Active</span></div>
+                            <div class="patient-row"><img class="pavatar" src="../assets/1438761681033-6461ffad8d80.webp" alt=""><div class="info"><strong>Olivia Martin</strong><span>55 · F · Last visit: Aug 29</span></div><span class="badge waiting">Review</span></div>
+                            <div class="patient-row"><img class="pavatar" src="../assets/1500648767791-00dcc994a43e.webp" alt=""><div class="info"><strong>Sophia Turner</strong><span>31 · F · Last visit: Aug 28</span></div><span class="badge arrived">Active</span></div>
+                            <div class="patient-row"><img class="pavatar" src="../assets/1506794778202-cad84cf45f1d.webp" alt=""><div class="info"><strong>Ava Thompson</strong><span>27 · F · Last visit: Aug 26</span></div><span class="badge done">Stable</span></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head"><h3><i class="fa-solid fa-chart-line"></i> Patient insights</h3><span>Summary</span></div>
+                        <div class="stat-row"><span class="label">Total patients</span><span class="value">28</span></div>
+                        <div class="stat-row"><span class="label">New this month</span><span class="value">6</span></div>
+                        <div class="stat-row"><span class="label">Returning</span><span class="value">22</span></div>
+                        <div class="stat-row"><span class="label">Avg. age</span><span class="value">41</span></div>
+                        <div class="stat-row"><span class="label">Gender split</span><span class="value">F: 24 · M: 4</span></div>
+                        <div style="margin-top:12px"><span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 18% patient growth this quarter</span></div>
+
+                        <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:14px">
+                            <div class="card-head"><h3><i class="fa-solid fa-tag"></i> Top conditions</h3><span>Active</span></div>
+                            <div class="stat-row"><span class="label">Hypothyroidism</span><span class="value">7</span></div>
+                            <div class="stat-row"><span class="label">Hypertension</span><span class="value">5</span></div>
+                            <div class="stat-row"><span class="label">Type 2 Diabetes</span><span class="value">4</span></div>
+                            <div class="stat-row"><span class="label">Anxiety</span><span class="value">3</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Recent patient activity + referrals -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-rotate"></i> Recent patient activity</h3><span>Last 48h</span></div>
+                        <div class="timeline">
+                            <div class="timeline-item"><strong>Emma Wilson</strong><p>Consultation completed · Prescription renewed</p></div>
+                            <div class="timeline-item"><strong>Priya Shah</strong><p>Lab results reviewed · Follow-up scheduled</p></div>
+                            <div class="timeline-item"><strong>Olivia Martin</strong><p>Diagnostic report uploaded · Pending review</p></div>
+                            <div class="timeline-item"><strong>Sophia Turner</strong><p>Care plan updated · Nutrition goals revised</p></div>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-envelope-open-text"></i> Referrals</h3><span>4 pending</span></div>
+                        <div class="record"><div class="record-icon" style="background:#fef3dc;color:#9b6e22"><i class="fa-solid fa-clipboard-list"></i></div><div><strong>Olivia Martin</strong><span>To Dr. Lee · Diagnostics</span></div><b class="arrow"><i class="fa-solid fa-chevron-right"></i></b></div>
+                        <div class="record"><div class="record-icon" style="background:#eef7e7;color:var(--blue-dark)"><i class="fa-solid fa-clipboard-list"></i></div><div><strong>Mia Walker</strong><span>To Dr. Khan · Nutrition</span></div><b class="arrow"><i class="fa-solid fa-chevron-right"></i></b></div>
+                        <div class="record"><div class="record-icon" style="background:#eaf4e4;color:#578333"><i class="fa-solid fa-clipboard-list"></i></div><div><strong>Isabella Chen</strong><span>To Dr. Rahman · General</span></div><b class="arrow"><i class="fa-solid fa-chevron-right"></i></b></div>
+                        <div style="margin-top:10px"><span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 2 new referrals today</span></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Patient notes -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-pen-to-square"></i> Recent patient notes</h3><span>Quick access</span></div>
+                    <div style="display:grid;gap:8px">
+                        <div style="background:var(--bg);padding:12px;border-radius:12px;border-left:3px solid var(--blue)"><strong style="font-size:12px">Emma Wilson</strong><p style="font-size:11px;color:var(--muted);margin-top:3px">Discussed blood pressure management. Adjusted dosage. Follow-up in 4 weeks.</p></div>
+                        <div style="background:var(--bg);padding:12px;border-radius:12px;border-left:3px solid #bd8a37"><strong style="font-size:12px">Priya Shah</strong><p style="font-size:11px;color:var(--muted);margin-top:3px">Nutrition goals reviewed. Good progress. Continue current plan.</p></div>
+                        <div style="background:var(--bg);padding:12px;border-radius:12px;border-left:3px solid #c96155"><strong style="font-size:12px">Olivia Martin</strong><p style="font-size:11px;color:var(--muted);margin-top:3px">Awaiting diagnostic results. Will review and update care plan accordingly.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MESSAGES ===== -->
+            <section class="panel-section" id="messages">
+                <div class="card">
+                    <div class="card-head">
+                        <div>
+                            <div class="eyebrow">Messages</div>
+                            <h3 style="font-size:25px;margin-top:4px">Inbox & communications</h3>
+                        </div>
+                        <span>3 unread</span>
+                    </div>
+                    <div class="msg-item"><img class="mavatar" src="../assets/1494790108377-be9c29b29330.webp" alt=""><div class="content"><strong>Emma Wilson <span class="unread">Unread</span></strong><p>Hi Dr. Rahman, I have a question about my new prescription...</p></div><span class="time">12:32</span></div>
+                    <div class="msg-item"><img class="mavatar" src="../assets/1559839734-2b71ea197ec2.webp" alt=""><div class="content"><strong>Dr. Aisha Khan <span class="unread">Unread</span></strong><p>Regarding the referral for Mia Walker, I've scheduled her for next week.</p></div><span class="time">11:15</span></div>
+                    <div class="msg-item"><img class="mavatar" src="../assets/1438761681033-6461ffad8d80.webp" alt=""><div class="content"><strong>Olivia Martin</strong><p>Thank you for the appointment today. I'll follow up after my test results.</p></div><span class="time">10:45</span></div>
+                    <div class="msg-item"><img class="mavatar" src="../assets/1507003211169-0a1dd7228f2d.webp" alt=""><div class="content"><strong>Priya Shah <span class="unread">Unread</span></strong><p>Can we reschedule my follow-up to next Tuesday? I have a conflict.</p></div><span class="time">09:20</span></div>
+                    <div class="msg-item"><img class="mavatar" src="../assets/1612349317150-e413f6a5b16d.webp" alt=""><div class="content"><strong>Dr. Daniel Lee</strong><p>Lab results for Olivia Martin are ready. Please review at your earliest.</p></div><span class="time">08:40</span></div>
+                </div>
+
+                <!-- NEW: Quick reply + message stats -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-envelope"></i> Message stats</h3><span>This week</span></div>
+                        <div class="stat-row"><span class="label">Total received</span><span class="value">24</span></div>
+                        <div class="stat-row"><span class="label">Replied</span><span class="value">18</span></div>
+                        <div class="stat-row"><span class="label">Unread</span><span class="value">3</span></div>
+                        <div class="stat-row"><span class="label">Avg. response time</span><span class="value">2.4h</span></div>
+                        <div style="margin-top:8px"><span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 94% response rate</span></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-paperclip"></i> Quick reply templates</h3><span>Save time</span></div>
+                        <button style="width:100%;padding:10px;border-radius:10px;background:var(--bg);text-align:left;font-size:11px;font-weight:600;margin-bottom:6px;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-file-lines"></i> "I've reviewed your results. Please schedule a follow-up."</button>
+                        <button style="width:100%;padding:10px;border-radius:10px;background:var(--bg);text-align:left;font-size:11px;font-weight:600;margin-bottom:6px;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-calendar-days"></i> "Your next appointment is confirmed for [date] at [time]."</button>
+                        <button style="width:100%;padding:10px;border-radius:10px;background:var(--bg);text-align:left;font-size:11px;font-weight:600;cursor:pointer" onclick="location.href='../404.html'"><i class="fa-solid fa-pills"></i> "Your prescription has been renewed and sent to the pharmacy."</button>
+                    </div>
+                </div>
+
+                <!-- NEW: Secure message compose -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-pen"></i> Compose new message</h3><span>Secure</span></div>
+                    <div style="display:grid;gap:10px">
+                        <div style="display:flex;gap:10px;flex-wrap:wrap">
+                            <input id="composeTo" placeholder="To: Patient or colleague" style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:12px;outline:none;font-family:inherit" />
+                            <input id="composeSubject" placeholder="Subject" style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:12px;outline:none;font-family:inherit" />
+                        </div>
+                        <textarea id="composeBody" placeholder="Type your message here..." style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:12px;outline:none;font-family:inherit;resize:vertical;min-height:80px"></textarea>
+                        
+                        <div id="composeMsg" style="display:none; font-size:12px; font-weight:600; padding: 4px 0;"></div>
+
+                        <button style="background:var(--blue);color:#fff;padding:10px 20px;border-radius:10px;font-weight:700;align-self:flex-end;cursor:pointer" onclick="sendComposeMessage(event)">Send message <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <script>
+                        function sendComposeMessage(e) {
+                            if (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                            }
+                            const to = document.getElementById('composeTo');
+                            const subject = document.getElementById('composeSubject');
+                            const body = document.getElementById('composeBody');
+                            const msgDiv = document.getElementById('composeMsg');
+                            
+                            if (!to.value.trim() || !subject.value.trim() || !body.value.trim()) {
+                                msgDiv.textContent = 'Please fill detail mandatory';
+                                msgDiv.style.color = '#c96155';
+                                msgDiv.style.display = 'block';
+                            } else {
+                                msgDiv.style.display = 'none';
+                                to.value = '';
+                                subject.value = '';
+                                body.value = '';
+                                location.href = '../404.html';
+                            }
+                        }
+                        
+                        window.addEventListener('pageshow', (event) => {
+                            if (event.persisted) {
+                                document.getElementById('composeTo').value = '';
+                                document.getElementById('composeSubject').value = '';
+                                document.getElementById('composeBody').value = '';
+                                document.getElementById('composeMsg').style.display = 'none';
+                            }
+                        });
+                    </script>
+                </div>
+            </section>
+
+            <!-- ===== PROFILE ===== -->
+            <section class="panel-section" id="profile">
+                <div class="grid profile-grid">
+                    <div class="card">
+                        <div class="card-head">
+                            <div>
+                                <div class="eyebrow">Profile</div>
+                                <h3 style="font-size:25px;margin-top:4px">Doctor details</h3>
+                            </div>
+                        </div>
+                        <div class="field"><label>Full name</label><div id="profileName">Dr. Nusrat Rahman</div></div>
+                        <div class="field"><label>Specialty</label><div>General Physician · Internal Medicine</div></div>
+                        <div class="field"><label>Email</label><div>n.rahman@Stackly.com</div></div>
+                        <div class="field"><label>Phone</label><div>+1 555 019 345</div></div>
+                        <div class="field"><label>License</label><div>MD-2024-0819</div></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head"><h3>Practice overview</h3></div>
+                        <div class="field"><label>Department</label><div>Women's Health & General Medicine</div></div>
+                        <div class="field"><label>Joined Stackly</label><div>January 2024</div></div>
+                        <div class="field"><label>Patients under care</label><div>28 active · 42 total</div></div>
+                        <div class="field"><label>Next available</label><div>Today · 14:30</div></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Availability & schedule preferences -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-calendar-days"></i> Weekly availability</h3><span>Current</span></div>
+                    <div class="availability-grid">
+                        <div class="avail-day active"><span class="day">Mon</span><span class="hours">08–17</span></div>
+                        <div class="avail-day active"><span class="day">Tue</span><span class="hours">08–17</span></div>
+                        <div class="avail-day active"><span class="day">Wed</span><span class="hours">08–17</span></div>
+                        <div class="avail-day active"><span class="day">Thu</span><span class="hours">09–18</span></div>
+                        <div class="avail-day active"><span class="day">Fri</span><span class="hours">08–15</span></div>
+                        <div class="avail-day off"><span class="day">Sat</span><span class="hours">Off</span></div>
+                        <div class="avail-day off"><span class="day">Sun</span><span class="hours">Off</span></div>
+                    </div>
+                    <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+                        <span style="font-size:10px;color:var(--muted)"><i class="fa-solid fa-circle" style="font-size:10px;color:var(--muted)"></i> Available</span>
+                        <span style="font-size:10px;color:var(--muted)"><i class="fa-regular fa-circle" style="font-size:10px;color:var(--muted)"></i> Off</span>
+                        <span style="font-size:10px;color:var(--muted);margin-left:auto">Last updated: Aug 31</span>
+                    </div>
+                </div>
+
+                <!-- NEW: Education & certifications -->
+                <div class="grid two" style="margin-top:18px">
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-graduation-cap"></i> Education</h3><span>Credentials</span></div>
+                        <div class="stat-row"><span class="label">Medical School</span><span class="value">Johns Hopkins</span></div>
+                        <div class="stat-row"><span class="label">Residency</span><span class="value">Internal Medicine · 2022</span></div>
+                        <div class="stat-row"><span class="label">Fellowship</span><span class="value">Women's Health · 2024</span></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-head"><h3><i class="fa-solid fa-certificate"></i> Certifications</h3><span>Active</span></div>
+                        <div class="stat-row"><span class="label">Board Certified</span><span class="value">Internal Medicine</span></div>
+                        <div class="stat-row"><span class="label">ACLS</span><span class="value">Valid until 2028</span></div>
+                        <div class="stat-row"><span class="label">BLS</span><span class="value">Valid until 2027</span></div>
+                    </div>
+                </div>
+
+                <!-- NEW: Languages & pronouns -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-globe"></i> Languages & communication</h3><span>Preferences</span></div>
+                    <div class="stat-row"><span class="label">Languages spoken</span><span class="value">English, Bengali, Hindi</span></div>
+                    <div class="stat-row"><span class="label">Pronouns</span><span class="value">She / Her</span></div>
+                    <div class="stat-row"><span class="label">Communication style</span><span class="value">Empathetic, collaborative</span></div>
+                </div>
+
+                <!-- NEW: Practice settings -->
+                <div class="card reveal" style="margin-top:18px">
+                    <div class="card-head"><h3><i class="fa-solid fa-gear"></i> Practice settings</h3><span>Configure</span></div>
+                    <div class="stat-row"><span class="label">Appointment duration</span><span class="value">35 min (default)</span></div>
+                    <div class="stat-row"><span class="label">Break duration</span><span class="value">45 min (lunch)</span></div>
+                    <div class="stat-row"><span class="label">Telehealth enabled</span><span class="value"><i class="fa-solid fa-circle-check"></i> Yes</span></div>
+                    <div class="stat-row"><span class="label">Patient messaging</span><span class="value"><i class="fa-solid fa-circle-check"></i> Enabled</span></div>
+                    <div class="stat-row"><span class="label">Auto-reminders</span><span class="value">24h before</span></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(location.search);
+            const storedEmail = localStorage.getItem('StacklyEmail') || params.get('email') || 'n.rahman@Stackly.com';
+            let storedUsername = localStorage.getItem('StacklyUsername');
+            if (!storedUsername && storedEmail) {
+                storedUsername = storedEmail.split('@')[0];
+            }
+            if (!storedUsername) storedUsername = 'Dr. Rahman';
+
+            let name = storedUsername.toLowerCase().includes('rahman') ? 'Dr. Rahman' : storedUsername.replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            const email = storedEmail;
+            const initial = name.replace(/^Dr\.\s*/i, '').charAt(0).toUpperCase() || 'R';
+
+            document.querySelectorAll('#userName, #sideName, #profileName, #sideCardName, #welcomeName').forEach(el => el.textContent = name);
+            document.querySelectorAll('#sideCardEmail').forEach(el => el.textContent = email);
+            document.querySelectorAll('#sideCardAvatar').forEach(el => el.textContent = initial);
+
+            document.querySelectorAll('.side-nav button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.side-nav button').forEach(x => x.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.querySelectorAll('.panel-section').forEach(x => x.classList.remove('active'));
+                    const panel = document.getElementById(btn.dataset.panel);
+                    panel.classList.add('active');
+                    const titles = {
+                        overview: `Good morning, <span id="userName">${name}</span>`,
+                        schedule: 'Your schedule',
+                        patients: 'Your patients',
+                        messages: 'Messages & inbox',
+                        profile: 'Your profile'
+                    };
+                    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                    const mainEl = document.querySelector('.main');
+                    if (mainEl) mainEl.scrollTop = 0;
+
+                    document.getElementById('pageTitle').innerHTML = titles[btn.dataset.panel] || btn.textContent.trim();
+                    closeSidebar();
+                    animatePanel(panel);
+                });
+            });
+
+            function animatePanel(panel) {
+                gsap.fromTo(panel.querySelectorAll('.card, .welcome, .patient-row, .msg-item, .record, .timeline-item, .avail-day, .stat-row'),
+                    { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: .5, stagger: .05, ease: 'power3.out',
+                        clearProps: 'transform' });
+                panel.querySelectorAll('.chart-line').forEach(l => gsap.fromTo(l, { strokeDasharray: 1,
+                        strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.2, ease: 'power2.out' }));
+                        
+                // Metric animation
+                panel.querySelectorAll('.stat-card strong').forEach(el => {
+                    const originalText = el.innerText.trim();
+                    const numMatch = originalText.match(/^0*(\d+)/);
+                    if (numMatch) {
+                        const targetNum = parseInt(numMatch[1], 10);
+                        const isPadded = originalText.startsWith('0') && targetNum < 10 && originalText.length >= 2;
+                        const suffix = originalText.replace(numMatch[0], '');
+                        
+                        let obj = { val: 0 };
+                        gsap.to(obj, {
+                            val: targetNum,
+                            duration: 1.2,
+                            ease: "power2.out",
+                            onUpdate: function() {
+                                let curr = Math.floor(obj.val);
+                                let displayStr = curr.toString();
+                                if (isPadded && curr < 10) {
+                                    displayStr = '0' + curr;
+                                }
+                                el.innerText = displayStr + suffix;
+                            }
+                        });
+                    }
+                });
+            }
+
+            const menuBtn = document.getElementById('menu');
+            const closeBtn = document.getElementById('sidebarClose');
+            const sidebarEl = document.getElementById('sidebar');
+
+            function openSidebar() {
+                if (sidebarEl) sidebarEl.classList.add('open');
+                document.body.classList.add('no-scroll');
+                if (menuBtn) menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            }
+
+            function closeSidebar() {
+                if (sidebarEl) sidebarEl.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+                if (menuBtn) menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+
+            if (menuBtn && sidebarEl) {
+                menuBtn.addEventListener('click', () => {
+                    if (sidebarEl.classList.contains('open')) {
+                        closeSidebar();
+                    } else {
+                        openSidebar();
+                    }
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeSidebar);
+            }
+            document.getElementById('logout').addEventListener('click', () => location.href = '../index.html');
+
+            document.querySelector('.main').addEventListener('click', (e) => {
+                const clickable = e.target.closest('button, a, input[type="button"], input[type="submit"], .record, .reminder-card, .tip-item, .contact-row, .msg-item, .patient-row, .avail-day, .ins-card, .pill');
+                if (clickable && clickable.id !== 'menu') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    location.href = '../404.html';
+                }
+            });
+
+            const dateChip = document.querySelector('.date-chip');
+            if (dateChip) {
+                const now = new Date();
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                
+                const dayName = days[now.getDay()];
+                let dayNum = now.getDate();
+                if (dayNum < 10) dayNum = '0' + dayNum;
+                const monthName = months[now.getMonth()];
+                const year = now.getFullYear();
+                
+                dateChip.textContent = `${dayName} · ${dayNum} ${monthName} ${year}`;
+            }
+
+            animatePanel(document.getElementById('overview'));
+        });
+    </script>
+</body>
+</html>

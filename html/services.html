@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services — Stackly</title>
+  <meta
+    name="description"
+    content="Explore Stackly's personalized women's healthcare services, specialized care, treatment programs, and modern medical solutions."
+  >
+
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <img src="../logo_trimmed.webp" alt="StacklyCare Logo" class="loader-logo">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('pageLoader');
+        if (loader) loader.classList.add('hidden');
+      }, 800);
+    });
+  </script>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="../index.html" class="site-logo" aria-label="Stackly Home">
+          <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="services.html" class="nav-item active">Services</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="blog.html" class="nav-item">Blog</a>
+          <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <a href="login.html" class="btn-outline-pill-header">
+          <span>Book a Schedule</span>
+
+          <span class="circle-arrow">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+    <div class="mobile-navigation">
+      <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="./login.html" class="mobile-nav-cta">Book a Schedule</a>
+    </div>
+
+
+  <main>
+
+    <!-- ============================================================
+         01. HERO
+         Clip-path image reveal
+         ============================================================ -->
+    <section class="services-hero section-dark">
+      <div class="services-hero-orbit orbit-one"></div>
+      <div class="services-hero-orbit orbit-two"></div>
+
+      <div class="container services-hero-container">
+
+        <div class="services-hero-copy">
+
+          <div class="hero-eyebrow service-reveal">
+            <span class="eyebrow-dot"></span>
+            Personalized Women's Healthcare
+          </div>
+
+          <h1 class="services-hero-title">
+            Care designed
+            <span>around you.</span>
+          </h1>
+
+          <p class="services-hero-description">
+            From preventive care to specialized treatment, our approach
+            combines medical expertise, advanced technology, and genuine
+            human connection.
+          </p>
+
+          <div class="services-hero-actions">
+            <a href="../404.html" class="btn btn-primary">
+              <span>Book a Schedule</span>
+              <span class="btn-icon-circle">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a href="../404.html" class="hero-text-link">
+              Explore our care
+              <span>↓</span>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="services-hero-visual">
+
+          <div class="hero-image-frame">
+            <div class="hero-image-overlay"></div>
+
+            <img
+              src="../assets/hero_doctor.webp"
+              alt="Stackly female physician"
+              class="services-hero-image"
+            >
+
+            <div class="hero-image-caption">
+              <span class="caption-line"></span>
+              <span>Expert care. Human connection.</span>
+            </div>
+          </div>
+
+          <div class="hero-floating-stat">
+            <span class="floating-stat-number">4K+</span>
+            <span class="floating-stat-label">patients supported</span>
+          </div>
+
+          <div class="hero-floating-badge">
+            <div class="floating-badge-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20.8 8.2a5.5 5.5 0 0 0-7.8-3.8L12 5.5l-1-1.1a5.5 5.5 0 0 0-7.8 3.8c-.5 3.8 2.1 6.1 4.5 8.1L12 20l4.3-3.7c2.4-2 5-4.3 4.5-8.1Z"/>
+              </svg>
+            </div>
+            <span>Care with<br>confidence</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom-label">
+        <span>01</span>
+        <span class="hero-label-line"></span>
+        <span>OUR SERVICES</span>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         02. SERVICES OVERVIEW
+         Asymmetrical grid
+         ============================================================ -->
+    <section
+      class="services-overview"
+      id="services-overview"
+    >
+      <div class="container">
+
+        <div class="section-intro services-overview-intro">
+
+          <div>
+            <span class="section-kicker">WHAT WE OFFER</span>
+
+            <h2>
+              Healthcare that
+              <em>moves with you.</em>
+            </h2>
+          </div>
+
+          <p>
+            Every woman deserves healthcare that listens first.
+            Our services are designed to support you through every
+            stage of life with clarity, comfort, and expertise.
+          </p>
+
+        </div>
+
+
+        <div class="services-asymmetric-grid">
+
+          <!-- Large feature -->
+          <article class="service-feature-card service-card-large">
+
+            <div class="service-card-image">
+              <img
+                src="../assets/1538108149393-fbbd81895907.webp"
+                alt="Woman receiving compassionate healthcare"
+              >
+
+              <span class="service-card-number">01</span>
+            </div>
+
+            <div class="service-card-content">
+              <div class="service-card-top">
+                <span>PRIMARY CARE</span>
+
+                <a href="../404.html" class="service-arrow" aria-label="Primary Care"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+
+              <h3>Complete women's health</h3>
+
+              <p>
+                Comprehensive preventive and everyday healthcare
+                built around your individual needs.
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Small card -->
+          <article class="service-feature-card service-card-small service-card-green">
+
+            <div class="service-small-number">02</div>
+
+            <div class="service-small-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+
+            <h3>Preventive care</h3>
+
+            <p>
+              Screenings, wellness consultations, and proactive
+              health planning.
+            </p>
+
+            <a href="../404.html" class="service-simple-link">
+              Discover <span><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+          </article>
+
+
+          <!-- Small image card -->
+          <article class="service-feature-card service-image-card">
+
+            <img
+              src="../assets/1594824476967-48c8b964273f.webp"
+              alt="Specialized Healthcare Specialist"
+            >
+
+            <div class="service-image-overlay">
+              <span>03</span>
+              <h3>Specialized care</h3>
+              <a href="../404.html" aria-label="Explore specialized care"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+
+          </article>
+
+
+          <!-- Wide card -->
+          <article class="service-feature-card service-wide-card">
+
+            <div class="wide-card-content">
+              <span class="service-card-number">04</span>
+
+              <span class="section-kicker">WELLNESS</span>
+
+              <h3>
+                Supporting your
+                <span>whole health.</span>
+              </h3>
+
+              <p>
+                Because your physical health, emotional wellbeing,
+                and long-term confidence are connected.
+              </p>
+
+              <a href="../404.html" class="service-outline-link">
+                View wellness programs
+                <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+
+            <div class="wide-card-shape">
+              <div class="shape-circle shape-circle-one"></div>
+              <div class="shape-circle shape-circle-two"></div>
+              <div class="shape-cross"></div>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         03. CARE PROCESS & STEPS
+         Clean 4-Step Patient Journey
+         ============================================================ -->
+    <section class="care-process-section">
+      <div class="container">
+        <div class="care-process-header">
+          <span class="section-kicker">HOW CARE WORKS</span>
+          <h2>A seamless care experience<br><span>from day one.</span></h2>
+          <p>We've designed every step of your health journey to be clear, comfortable, and personalized around your needs.</p>
+        </div>
+
+        <div class="care-process-grid">
+          <div class="care-step-card">
+            <div class="step-card-num">01</div>
+            <h3>Personalized Assessment</h3>
+            <p>We begin with a thorough discussion to understand your full health history, lifestyle, and individual goals.</p>
+            <ul class="step-card-list">
+              <li>Comprehensive health review</li>
+              <li>Individualized symptom tracking</li>
+            </ul>
+          </div>
+
+          <div class="care-step-card">
+            <div class="step-card-num">02</div>
+            <h3>Preventive Screening</h3>
+            <p>Proactive testing and diagnostic evaluations using modern technology to spot potential concerns early.</p>
+            <ul class="step-card-list">
+              <li>Advanced diagnostic lab tests</li>
+              <li>Routine wellness screenings</li>
+            </ul>
+          </div>
+
+          <div class="care-step-card">
+            <div class="step-card-num">03</div>
+            <h3>Specialist Care Plan</h3>
+            <p>Collaborative care plans crafted alongside trusted female health specialists tailored strictly to you.</p>
+            <ul class="step-card-list">
+              <li>Tailored treatment plans</li>
+              <li>Expert specialist consultations</li>
+            </ul>
+          </div>
+
+          <div class="care-step-card">
+            <div class="step-card-num">04</div>
+            <h3>Continuous Wellness</h3>
+            <p>Long-term follow-up support, guidance, and continuous tracking to keep you feeling confident and cared for.</p>
+            <ul class="step-card-list">
+              <li>Ongoing follow-up visits</li>
+              <li>Direct patient messaging support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="care-process-cta">
+          <a href="../404.html" class="btn btn-primary">
+            <span>Book Your Consultation</span>
+            <span class="btn-icon-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         04. SPECIALIZED CARE
+         Interactive tabs
+         ============================================================ -->
+    <section class="specialized-care">
+
+      <div class="specialized-background"></div>
+
+      <div class="container">
+
+        <div class="specialized-heading">
+
+          <div>
+            <span class="section-kicker light-kicker">
+              SPECIALIZED CARE
+            </span>
+
+            <h2>
+              Expertise for
+              <span>every chapter.</span>
+            </h2>
+          </div>
+
+          <p>
+            Explore focused areas of care delivered by experienced
+            healthcare professionals.
+          </p>
+
+        </div>
+
+
+        <div class="specialized-tabs">
+
+          <div class="specialized-tab-list" role="tablist">
+
+            <button
+              class="specialized-tab active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-tab="gynecology"
+            >
+              <span>01</span>
+              <strong>Gynecology</strong>
+              <span class="tab-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </button>
+
+            <button
+              class="specialized-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="maternity"
+            >
+              <span>02</span>
+              <strong>Pregnancy & Maternity</strong>
+              <span class="tab-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </button>
+
+            <button
+              class="specialized-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="fertility"
+            >
+              <span>03</span>
+              <strong>Fertility & Family Planning</strong>
+              <span class="tab-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </button>
+
+            <button
+              class="specialized-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-tab="wellness"
+            >
+              <span>04</span>
+              <strong>Women's Wellness</strong>
+              <span class="tab-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </button>
+
+          </div>
+
+
+          <div class="specialized-panel">
+
+            <div class="specialized-panel-image">
+              <img
+                id="specialized-image"
+                src="../assets/1538108149393-fbbd81895907.webp"
+                alt="Gynecology consultation"
+              >
+
+              <div class="specialized-image-label">
+                <span class="image-label-dot"></span>
+                <span id="specialized-label">Gynecology</span>
+              </div>
+            </div>
+
+
+            <div class="specialized-panel-content">
+
+              <span class="specialized-panel-number" id="specialized-number">
+                01
+              </span>
+
+              <h3 id="specialized-title">
+                Confident care for
+                <span>your health.</span>
+              </h3>
+
+              <p id="specialized-description">
+                From routine examinations to complex concerns,
+                our gynecology services are designed around your
+                comfort, privacy, and long-term wellbeing.
+              </p>
+
+              <div class="specialized-services" id="specialized-services">
+
+                <span>Routine examinations</span>
+                <span>Women's health screenings</span>
+                <span>Hormonal health</span>
+                <span>Menstrual health</span>
+
+              </div>
+
+              <a href="../404.html" class="specialized-cta">
+                Explore this service
+                <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         05. TREATMENT PROCESS
+         Process flow
+         ============================================================ -->
+    <section class="treatment-process">
+
+      <div class="container">
+
+        <div class="process-heading">
+
+          <span class="section-kicker">HOW IT WORKS</span>
+
+          <h2>
+            Care that feels
+            <em>clear from day one.</em>
+          </h2>
+
+          <p>
+            We make every step easier to understand, from your
+            first conversation to your ongoing care.
+          </p>
+
+        </div>
+
+
+        <div class="process-flow">
+
+          <div class="process-line">
+            <div class="process-line-progress"></div>
+          </div>
+
+
+          <article class="process-step">
+
+            <div class="process-number">
+              01
+            </div>
+
+            <div class="process-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-4-4"/>
+              </svg>
+            </div>
+
+            <h3>Discover</h3>
+
+            <p>
+              Tell us what you're experiencing and what
+              you want to achieve.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-number">
+              02
+            </div>
+
+            <div class="process-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/>
+                <path d="M8 2v4M16 2v4M7 10h10M7 14h6"/>
+              </svg>
+            </div>
+
+            <h3>Consult</h3>
+
+            <p>
+              Meet with the right healthcare professional
+              for a thoughtful consultation.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-number">
+              03
+            </div>
+
+            <div class="process-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 19V5"/>
+                <path d="M4 19h16"/>
+                <path d="m7 15 3-4 3 2 5-7"/>
+              </svg>
+            </div>
+
+            <h3>Understand</h3>
+
+            <p>
+              Get clear answers, relevant diagnostics,
+              and an understandable care plan.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-number">
+              04
+            </div>
+
+            <div class="process-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 7 10 17l-5-5"/>
+              </svg>
+            </div>
+
+            <h3>Treat</h3>
+
+            <p>
+              Begin a personalized treatment pathway
+              built around your needs.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-number">
+              05
+            </div>
+
+            <div class="process-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3v18M3 12h18"/>
+              </svg>
+            </div>
+
+            <h3>Thrive</h3>
+
+            <p>
+              Continue with ongoing support that keeps
+              your health moving forward.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         06. SERVICE DETAILS
+         Expandable panels
+         ============================================================ -->
+    <section class="service-details">
+
+      <div class="container service-details-container">
+
+        <div class="details-intro">
+
+          <span class="section-kicker">SERVICE DETAILS</span>
+
+          <h2>
+            Find the care
+            <span>you need.</span>
+          </h2>
+
+          <p>
+            Explore our services in more detail and discover
+            what support may be right for you.
+          </p>
+
+        </div>
+
+
+        <div class="details-accordion">
+
+          <div class="accordion-item active">
+
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="true"
+            >
+              <span class="accordion-index">01</span>
+
+              <span class="accordion-title">
+                Preventive Women's Health
+              </span>
+
+              <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="accordion-content">
+
+              <div class="accordion-inner">
+
+                <p>
+                  Proactive healthcare designed to help you
+                  understand your health before problems become
+                  problems. Our preventive services focus on
+                  regular assessments, screenings, and long-term
+                  wellness planning.
+                </p>
+
+                <div class="accordion-tags">
+                  <span>Health assessments</span>
+                  <span>Routine screenings</span>
+                  <span>Wellness planning</span>
+                  <span>Risk assessment</span>
+                </div>
+
+                <a href="../404.html" class="accordion-link">
+                  Discuss your needs <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="accordion-item">
+
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="accordion-index">02</span>
+
+              <span class="accordion-title">
+                Gynecology & Women's Health
+              </span>
+
+              <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="accordion-content">
+
+              <div class="accordion-inner">
+
+                <p>
+                  Comprehensive gynecological care delivered
+                  with privacy, sensitivity, and clinical
+                  expertise.
+                </p>
+
+                <div class="accordion-tags">
+                  <span>Gynecology</span>
+                  <span>Hormonal health</span>
+                  <span>Menstrual concerns</span>
+                  <span>Screening</span>
+                </div>
+
+                <a href="../404.html" class="accordion-link">
+                  Discuss your needs <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="accordion-item">
+
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="accordion-index">03</span>
+
+              <span class="accordion-title">
+                Pregnancy & Maternity
+              </span>
+
+              <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="accordion-content">
+
+              <div class="accordion-inner">
+
+                <p>
+                  Support throughout pregnancy with personalized
+                  consultations, monitoring, education, and
+                  coordinated maternity care.
+                </p>
+
+                <div class="accordion-tags">
+                  <span>Prenatal care</span>
+                  <span>Pregnancy monitoring</span>
+                  <span>Maternal wellness</span>
+                  <span>Postnatal support</span>
+                </div>
+
+                <a href="../404.html" class="accordion-link">
+                  Discuss your needs <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="accordion-item">
+
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="accordion-index">04</span>
+
+              <span class="accordion-title">
+                Fertility & Family Planning
+              </span>
+
+              <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="accordion-content">
+
+              <div class="accordion-inner">
+
+                <p>
+                  Clear, supportive guidance for individuals
+                  and couples planning their next chapter.
+                </p>
+
+                <div class="accordion-tags">
+                  <span>Fertility consultation</span>
+                  <span>Family planning</span>
+                  <span>Preconception care</span>
+                  <span>Specialist referral</span>
+                </div>
+
+                <a href="../404.html" class="accordion-link">
+                  Discuss your needs <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="accordion-item">
+
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+            >
+              <span class="accordion-index">05</span>
+
+              <span class="accordion-title">
+                Lifestyle & Wellness
+              </span>
+
+              <span class="accordion-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+
+            <div class="accordion-content">
+
+              <div class="accordion-inner">
+
+                <p>
+                  Practical guidance that supports your physical,
+                  emotional, and long-term wellbeing.
+                </p>
+
+                <div class="accordion-tags">
+                  <span>Nutrition</span>
+                  <span>Lifestyle guidance</span>
+                  <span>Stress management</span>
+                  <span>Wellness coaching</span>
+                </div>
+
+                <a href="../404.html" class="accordion-link">
+                  Discuss your needs <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         07. BENEFITS
+         Staggered icon reveal
+         ============================================================ -->
+    <section class="benefits-section">
+
+      <div class="container">
+
+        <div class="benefits-heading">
+
+          <div>
+            <span class="section-kicker">THE FINITECARE DIFFERENCE</span>
+
+            <h2>
+              More than a
+              <span>medical visit.</span>
+            </h2>
+          </div>
+
+          <p>
+            We combine clinical expertise with thoughtful details
+            that make healthcare feel more human.
+          </p>
+
+        </div>
+
+
+        <div class="benefits-grid">
+
+          <article class="benefit-item">
+
+            <div class="benefit-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+
+            <span class="benefit-number">01</span>
+
+            <h3>Personal attention</h3>
+
+            <p>
+              Your concerns are heard, your questions matter,
+              and your care is never one-size-fits-all.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-item">
+
+            <div class="benefit-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2 3 6v6c0 5.5 3.8 8.7 9 10 5.2-1.3 9-4.5 9-10V6l-9-4Z"/>
+                <path d="m8 12 2.5 2.5L16 9"/>
+              </svg>
+            </div>
+
+            <span class="benefit-number">02</span>
+
+            <h3>Trusted expertise</h3>
+
+            <p>
+              Experienced professionals committed to thoughtful,
+              evidence-informed healthcare.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-item">
+
+            <div class="benefit-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </div>
+
+            <span class="benefit-number">03</span>
+
+            <h3>Clear communication</h3>
+
+            <p>
+              No confusing medical language. We explain your
+              options so you can make informed decisions.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-item">
+
+            <div class="benefit-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 12h18"/>
+                <path d="M12 3v18"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+
+            <span class="benefit-number">04</span>
+
+            <h3>Modern approach</h3>
+
+            <p>
+              Technology and modern clinical practices working
+              together to make your experience better.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         08. CTA
+         Full bleed parallax
+         ============================================================ -->
+    <section class="services-cta">
+
+      <div class="services-cta-image">
+        <img
+          src="../assets/1538108149393-fbbd81895907.webp"
+          alt="Welcoming healthcare environment"
+        >
+      </div>
+
+      <div class="services-cta-overlay"></div>
+
+      <div class="container services-cta-container">
+
+        <div class="services-cta-content">
+
+          <span class="section-kicker cta-kicker">
+            YOUR NEXT STEP
+          </span>
+
+          <h2>
+            Your health deserves
+            <span>care that listens.</span>
+          </h2>
+
+          <p>
+            Take the first step toward more confident,
+            personalized healthcare.
+          </p>
+
+          <a href="../404.html" class="cta-button">
+            <span>Book a Schedule</span>
+
+            <span class="cta-button-icon">
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="cta-corner-text">
+        <span>FINYTECARE</span>
+        <span>HEALTH • CARE • CONFIDENCE</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Column 1: Brand & Socials -->
+        <div class="footer-col footer-brand-col">
+          <a href="../index.html" class="site-logo footer-logo">
+            <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
+          </a>
+
+          <p class="footer-brand-desc">
+            The modern healthcare platform for women ready to experience compassionate care and live healthier, happier lives.
+          </p>
+
+          <div class="footer-socials">
+            <a href="../404.html" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.21.19 2.21.19v2.43h-1.25c-1.23 0-1.61.77-1.61 1.56V12h2.74l-.44 3h-2.3v6.8c4.56-.93 8-4.96 8-9.8z"/></svg>
+            </a>
+            <a href="../404.html" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../404.html">Our Story</a></li>
+            <li><a href="../404.html">Careers</a></li>
+            <li><a href="../404.html">Press</a></li>
+            <li><a href="../404.html">Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Sales -->
+        <div class="footer-col footer-contact-col">
+          <h4>Contact Sales</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="../404.html">+91 98765 43210</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="../404.html">sales@Stackly.com</a>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6da235" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <a href="../404.html">Salem, Tamil Nadu</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../404.html">Privacy</a>
+          <a href="../404.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ============================================================
+       JAVASCRIPT
+       Navigation
+       Hero animation
+       Scroll animations
+       Tabs
+       Accordion
+       ============================================================ -->
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      gsap.registerPlugin(ScrollTrigger);
+
+
+      // ==========================================================
+      // Reduced Motion
+      // ==========================================================
+
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+
+      // ==========================================================
+      // Mobile Navigation
+      // ==========================================================
+
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileNavigation = document.querySelector('.mobile-navigation');
+
+      if (menuToggle && mobileNavigation) {
+
+        menuToggle.addEventListener('click', () => {
+
+          const isOpen = menuToggle.classList.toggle('is-open');
+          mobileNavigation.classList.toggle('is-open');
+          document.body.classList.toggle('no-scroll', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        });
+
+        mobileNavigation
+          .querySelectorAll('a')
+          .forEach(link => {
+
+            link.addEventListener('click', () => {
+
+              menuToggle.setAttribute(
+                'aria-expanded',
+                'false'
+              );
+
+              menuToggle.classList.remove('is-open');
+              mobileNavigation.classList.remove('is-open');
+
+            });
+
+          });
+
+      }
+
+
+      // ==========================================================
+      // Hero Entrance
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        const heroTimeline = gsap.timeline({
+          defaults: {
+            ease: 'power3.out'
+          }
+        });
+
+        heroTimeline
+          .from('.site-header', {
+            y: -30,
+            opacity: 0,
+            duration: 0.65
+          })
+          .from('.services-hero-copy .hero-eyebrow', {
+            y: 20,
+            opacity: 0,
+            duration: 0.65
+          }, '-=0.25')
+          .from('.services-hero-title', {
+            y: 55,
+            opacity: 0,
+            duration: 1
+          }, '-=0.35')
+          .from('.services-hero-description', {
+            y: 25,
+            opacity: 0,
+            duration: 0.7
+          }, '-=0.55')
+          .from('.services-hero-actions', {
+            y: 20,
+            opacity: 0,
+            duration: 0.6
+          }, '-=0.45')
+          .from('.hero-image-frame', {
+            clipPath: 'inset(100% 0 0 0 round 36px)',
+            scale: 1.08,
+            duration: 1.35,
+            ease: 'expo.out'
+          }, '-=1')
+          .from('.hero-image-caption', {
+            y: 15,
+            opacity: 0,
+            duration: 0.6
+          }, '-=0.5')
+          .from('.hero-floating-stat', {
+            x: 35,
+            opacity: 0,
+            duration: 0.65
+          }, '-=0.5')
+          .from('.hero-floating-badge', {
+            x: -30,
+            opacity: 0,
+            duration: 0.65
+          }, '-=0.55')
+          .from('.hero-bottom-label', {
+            opacity: 0,
+            y: 15,
+            duration: 0.5
+          }, '-=0.3');
+
+
+        gsap.to('.services-hero-image', {
+          yPercent: 5,
+          scale: 1.05,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.services-hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+
+        gsap.to('.hero-floating-stat', {
+          y: -18,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.services-hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+
+        gsap.to('.hero-floating-badge', {
+          y: 20,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.services-hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+      }
+
+
+      // ==========================================================
+      // Section Intro Reveals
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        gsap.utils.toArray(
+          '.section-intro, .process-heading, .details-intro, .benefits-heading, .specialized-heading'
+        ).forEach(section => {
+
+          gsap.from(section.children, {
+            y: 45,
+            opacity: 0,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 82%',
+              once: true
+            }
+          });
+
+        });
+
+      }
+
+
+      // ==========================================================
+      // Asymmetrical Service Cards
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        gsap.from('.service-feature-card', {
+          y: 70,
+          opacity: 0,
+          scale: 0.97,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.services-asymmetric-grid',
+            start: 'top 78%',
+            once: true
+          }
+        });
+
+
+        gsap.utils.toArray('.service-card-image img').forEach(image => {
+
+          gsap.to(image, {
+            scale: 1.08,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: image,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.3
+            }
+          });
+
+        });
+
+      }
+
+
+      // ==========================================================
+      // Featured Service Sticky Story
+      // ==========================================================
+
+      if (!prefersReducedMotion && window.innerWidth > 768) {
+
+        const featuredBlocks =
+          gsap.utils.toArray('.featured-content-block');
+
+        const featuredImage =
+          document.querySelector('.featured-service-image');
+
+        featuredBlocks.forEach((block, index) => {
+
+          ScrollTrigger.create({
+            trigger: block,
+            start: 'top 55%',
+            end: 'bottom 55%',
+            onEnter: () => {
+
+              featuredBlocks.forEach(item =>
+                item.classList.remove('active')
+              );
+
+              block.classList.add('active');
+
+              gsap.fromTo(
+                featuredImage,
+                {
+                  scale: 1.08,
+                  opacity: 0.65
+                },
+                {
+                  scale: 1,
+                  opacity: 1,
+                  duration: 0.8,
+                  ease: 'power3.out'
+                }
+              );
+
+            },
+            onEnterBack: () => {
+
+              featuredBlocks.forEach(item =>
+                item.classList.remove('active')
+              );
+
+              block.classList.add('active');
+
+            }
+          });
+
+        });
+
+        gsap.to('.featured-image-wrapper', {
+          yPercent: -3,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.featured-service',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1
+          }
+        });
+
+      }
+
+
+      // ==========================================================
+      // Specialized Care Tabs
+      // ==========================================================
+
+      const specializedData = {
+
+        gynecology: {
+          number: '01',
+          label: 'Gynecology',
+          title: 'Confident care for <span>your health.</span>',
+          description:
+            'From routine examinations to complex concerns, our gynecology services are designed around your comfort, privacy, and long-term wellbeing.',
+          image:
+            '../assets/1538108149393-fbbd81895907.webp',
+          alt: 'Gynecology consultation',
+          services: [
+            'Routine examinations',
+            "Women's health screenings",
+            'Hormonal health',
+            'Menstrual health'
+          ]
+        },
+
+        maternity: {
+          number: '02',
+          label: 'Pregnancy & Maternity',
+          title: 'Support for <span>every milestone.</span>',
+          description:
+            'Thoughtful maternity care designed to give you confidence, clarity, and support throughout pregnancy and beyond.',
+          image:
+            '../assets/1531988042231-d39a9cc12a9a.webp',
+          alt: 'Mother and baby care',
+          services: [
+            'Prenatal care',
+            'Pregnancy monitoring',
+            'Maternal wellness',
+            'Postnatal support'
+          ]
+        },
+
+        fertility: {
+          number: '03',
+          label: 'Fertility & Family Planning',
+          title: 'Plan your future <span>with confidence.</span>',
+          description:
+            'Clear and compassionate support for fertility questions, family planning, and the decisions that shape your next chapter.',
+          image:
+            '../assets/1559757148-5c350d0d3c56.webp',
+          alt: 'Couple discussing family planning',
+          services: [
+            'Fertility consultation',
+            'Family planning',
+            'Preconception care',
+            'Specialist referral'
+          ]
+        },
+
+        wellness: {
+          number: '04',
+          label: "Women's Wellness",
+          title: 'Feel better in <span>every season.</span>',
+          description:
+            'Whole-person wellness programs that connect everyday habits, preventive care, emotional wellbeing, and long-term health.',
+          image:
+            '../assets/1506126613408-eca07ce68773.webp',
+          alt: 'Woman practicing wellness',
+          services: [
+            'Lifestyle guidance',
+            'Nutrition support',
+            'Stress management',
+            'Wellness planning'
+          ]
+        }
+
+      };
+
+
+      const tabButtons =
+        document.querySelectorAll('.specialized-tab');
+
+      const specializedImage =
+        document.querySelector('#specialized-image');
+
+      const specializedLabel =
+        document.querySelector('#specialized-label');
+
+      const specializedNumber =
+        document.querySelector('#specialized-number');
+
+      const specializedTitle =
+        document.querySelector('#specialized-title');
+
+      const specializedDescription =
+        document.querySelector('#specialized-description');
+
+      const specializedServices =
+        document.querySelector('#specialized-services');
+
+
+      function updateSpecializedTab(key) {
+
+        const data = specializedData[key];
+
+        if (!data) return;
+
+        tabButtons.forEach(button => {
+
+          const isActive =
+            button.dataset.tab === key;
+
+          button.classList.toggle(
+            'active',
+            isActive
+          );
+
+          button.setAttribute(
+            'aria-selected',
+            String(isActive)
+          );
+
+        });
+
+
+        if (prefersReducedMotion) {
+
+          specializedImage.src = data.image;
+          specializedImage.alt = data.alt;
+          specializedLabel.textContent = data.label;
+          specializedNumber.textContent = data.number;
+          specializedTitle.innerHTML = data.title;
+          specializedDescription.textContent = data.description;
+
+          specializedServices.innerHTML =
+            data.services
+              .map(service => `<span>${service}</span>`)
+              .join('');
+
+          return;
+
+        }
+
+
+        const transition = gsap.timeline();
+
+        transition
+          .to(
+            [
+              specializedImage,
+              specializedTitle,
+              specializedDescription,
+              specializedServices
+            ],
+            {
+              opacity: 0,
+              y: 15,
+              duration: 0.2,
+              stagger: 0.02,
+              ease: 'power2.in'
+            }
+          )
+          .add(() => {
+
+            specializedImage.src = data.image;
+            specializedImage.alt = data.alt;
+            specializedLabel.textContent = data.label;
+            specializedNumber.textContent = data.number;
+            specializedTitle.innerHTML = data.title;
+            specializedDescription.textContent =
+              data.description;
+
+            specializedServices.innerHTML =
+              data.services
+                .map(service => `<span>${service}</span>`)
+                .join('');
+
+          })
+          .to(
+            [
+              specializedImage,
+              specializedTitle,
+              specializedDescription,
+              specializedServices
+            ],
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.45,
+              stagger: 0.04,
+              ease: 'power3.out'
+            }
+          );
+
+      }
+
+
+      tabButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+          updateSpecializedTab(
+            button.dataset.tab
+          );
+
+        });
+
+      });
+
+
+      // ==========================================================
+      // Process Steps
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        gsap.from('.process-step', {
+          y: 55,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.process-flow',
+            start: 'top 75%',
+            once: true
+          }
+        });
+
+
+        gsap.to('.process-line-progress', {
+          scaleX: 1,
+          transformOrigin: 'left center',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.process-flow',
+            start: 'top 65%',
+            end: 'bottom 70%',
+            scrub: 1
+          }
+        });
+
+      } else {
+
+        document
+          .querySelector('.process-line-progress')
+          ?.style.setProperty(
+            'transform',
+            'scaleX(1)'
+          );
+
+      }
+
+
+      // ==========================================================
+      // Accordion
+      // ==========================================================
+
+      const accordionItems =
+        document.querySelectorAll('.accordion-item');
+
+
+      accordionItems.forEach(item => {
+
+        const trigger =
+          item.querySelector('.accordion-trigger');
+
+        const content =
+          item.querySelector('.accordion-content');
+
+
+        if (item.classList.contains('active')) {
+
+          if (prefersReducedMotion) {
+            content.style.height = 'auto';
+          } else {
+            gsap.set(content, {
+              height: 'auto'
+            });
+          }
+
+        }
+
+
+        trigger.addEventListener('click', () => {
+
+          const isActive =
+            item.classList.contains('active');
+
+
+          accordionItems.forEach(otherItem => {
+
+            if (
+              otherItem !== item &&
+              otherItem.classList.contains('active')
+            ) {
+
+              otherItem.classList.remove('active');
+
+              const otherTrigger =
+                otherItem.querySelector('.accordion-trigger');
+
+              const otherContent =
+                otherItem.querySelector('.accordion-content');
+
+              otherTrigger.setAttribute(
+                'aria-expanded',
+                'false'
+              );
+
+              if (prefersReducedMotion) {
+
+                otherContent.style.height = '0px';
+
+              } else {
+
+                gsap.to(otherContent, {
+                  height: 0,
+                  duration: 0.45,
+                  ease: 'power3.inOut'
+                });
+
+              }
+
+            }
+
+          });
+
+
+          if (isActive) {
+
+            item.classList.remove('active');
+
+            trigger.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+            if (prefersReducedMotion) {
+
+              content.style.height = '0px';
+
+            } else {
+
+              gsap.to(content, {
+                height: 0,
+                duration: 0.45,
+                ease: 'power3.inOut'
+              });
+
+            }
+
+            return;
+
+          }
+
+
+          item.classList.add('active');
+
+          trigger.setAttribute(
+            'aria-expanded',
+            'true'
+          );
+
+
+          if (prefersReducedMotion) {
+
+            content.style.height = 'auto';
+
+          } else {
+
+            gsap.fromTo(
+              content,
+              {
+                height: 0
+              },
+              {
+                height: 'auto',
+                duration: 0.55,
+                ease: 'power3.inOut'
+              }
+            );
+
+          }
+
+        });
+
+      });
+
+
+      // ==========================================================
+      // Benefit Reveal
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        gsap.from('.benefit-item', {
+          y: 65,
+          opacity: 0,
+          duration: 0.75,
+          stagger: 0.13,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.benefits-grid',
+            start: 'top 78%',
+            once: true
+          }
+        });
+
+
+        gsap.utils.toArray('.benefit-icon').forEach(icon => {
+
+          gsap.from(icon, {
+            scale: 0.5,
+            rotation: -15,
+            opacity: 0,
+            duration: 0.65,
+            ease: 'back.out(1.5)',
+            scrollTrigger: {
+              trigger: icon,
+              start: 'top 82%',
+              once: true
+            }
+          });
+
+        });
+
+      }
+
+
+      // ==========================================================
+      // CTA Parallax
+      // ==========================================================
+
+      if (!prefersReducedMotion) {
+
+        gsap.to('.services-cta-image img', {
+          yPercent: -10,
+          scale: 1.08,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.services-cta',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.2
+          }
+        });
+
+
+        gsap.from('.services-cta-content > *', {
+          y: 45,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.services-cta',
+            start: 'top 72%',
+            once: true
+          }
+        });
+
+      }
+
+
+      // ==========================================================
+      // Refresh ScrollTrigger after images load
+      // ==========================================================
+
+      window.addEventListener('load', () => {
+
+        ScrollTrigger.refresh();
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
