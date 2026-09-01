@@ -41,7 +41,7 @@
     <div class="container">
       <div class="header-inner">
 
-        <a href="../404.html" class="site-logo">
+        <a href="../index.html" class="site-logo" aria-label="Stackly Home">
           <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
         </a>
 
@@ -707,7 +707,7 @@
 
         <!-- Column 1: Brand & Socials -->
         <div class="footer-col footer-brand-col">
-          <a href="../404.html" class="site-logo footer-logo">
+          <a href="../index.html" class="site-logo footer-logo">
             <img src="../logo_trimmed.webp" alt="StacklyCare" class="global-logo-img">
           </a>
 
@@ -1211,6 +1211,14 @@
 
           window.location.href = '../404.html';
 
+        });
+
+        window.addEventListener('pageshow', (e) => {
+          if (e.persisted) {
+            newsletterForm.reset();
+            newsletterInput.value = '';
+            if (newsletterMessage) newsletterMessage.textContent = '';
+          }
         });
 
       }
