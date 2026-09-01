@@ -52,6 +52,7 @@ html {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   max-width: 100%;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -60,6 +61,7 @@ body {
   line-height: 1.6;
   background-color: #ffffff;
   position: relative;
+  overscroll-behavior-x: none;
 }
 
 @media (max-width: 992px) {
@@ -811,3 +813,9 @@ body.no-scroll {
   }
 }
 
+/* Fix GSAP pin-spacer horizontal overflow on Windows/Edge */
+.pin-spacer {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
